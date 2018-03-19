@@ -1,0 +1,34 @@
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Point;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+
+public class AwtTest {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		JFrame jFrame = new JFrame("the first frame");
+		JLabel label = new JLabel("sunmeng",JLabel.CENTER);
+		Dimension d = new Dimension(500,300);
+		
+		Container container = jFrame.getContentPane();
+		container.add(label);
+		
+	//	jFrame.add(label);
+		jFrame.setSize(d);
+		jFrame.setBackground(Color.RED);
+		jFrame.setVisible(true);
+		System.out.println(jFrame.isVisible());
+		jFrame.setLocation(400, 500);
+		
+		
+	}
+
+}

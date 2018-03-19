@@ -1,0 +1,24 @@
+import java.awt.Color;
+import java.awt.Point;
+
+import javax.swing.JFrame;
+
+
+public class AwtTest {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		JFrame jFrame = new JFrame("the first frame");
+		jFrame.setSize(1000, 300);
+		jFrame.setBackground(Color.RED);
+		jFrame.setVisible(true);
+		System.out.println(jFrame.isVisible());
+		jFrame.setLocation(400, 500);
+		
+		
+	}
+
+}
