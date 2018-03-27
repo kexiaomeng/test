@@ -1,0 +1,41 @@
+warning: LF will be replaced by CRLF in .metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt.
+The file will have its original line endings in your working directory.
+[1mdiff --git a/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources b/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources[m
+[1mindex ec56e2e..75018c0 100644[m
+Binary files a/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources and b/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources differ
+[1mdiff --git a/.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps b/.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps[m
+[1mindex d5b3498..c8cc413 100644[m
+Binary files a/.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps and b/.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps differ
+[1mdiff --git a/.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt b/.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt[m
+[1mindex 432b9c4..ce2cb0f 100644[m
+[1m--- a/.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt[m
+[1m+++ b/.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt[m
+[36m@@ -61,7 +61,6 @@[m [mINDEX VERSION 1.126+E:\Java[m
+ 309899365.index[m
+ 3352727278.index[m
+ 486926686.index[m
+[31m-3953545093.index[m
+ 1131393237.index[m
+ 3926755850.index[m
+ 1480427931.index[m
+[1mdiff --git a/.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat b/.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat[m
+[1mindex c4be6a1..0d406b7 100644[m
+Binary files a/.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat and b/.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat differ
+[1mdiff --git a/NettyTest/bin/Server$1.class b/NettyTest/bin/Server$1.class[m
+[1mindex e1a058e..26226dd 100644[m
+Binary files a/NettyTest/bin/Server$1.class and b/NettyTest/bin/Server$1.class differ
+[1mdiff --git a/NettyTest/bin/Server.class b/NettyTest/bin/Server.class[m
+[1mindex 8a9ec88..49dbc7e 100644[m
+Binary files a/NettyTest/bin/Server.class and b/NettyTest/bin/Server.class differ
+[1mdiff --git a/NettyTest/src/Server.java b/NettyTest/src/Server.java[m
+[1mindex a229d0d..9e812ce 100644[m
+[1m--- a/NettyTest/src/Server.java[m
+[1m+++ b/NettyTest/src/Server.java[m
+[36m@@ -31,6 +31,7 @@[m [mpublic class Server {[m
+ 						 ByteBuf delimiter = Unpooled.copiedBuffer("$"[m
+ 								    .getBytes());[m
+ 						 [m
+[32m+[m						[32marg0.pipeline().addLast(new DelimiterBasedFrameDecoder(20,delimiter));[m
+ 						arg0.pipeline().addLast(new FixedLengthFrameDecoder(10));[m
+ 						arg0.pipeline().addLast(new StringDecoder());[m
+ 						arg0.pipeline().addLast(new EchoServerHandler());[m

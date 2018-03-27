@@ -4,30 +4,41 @@
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID"/>
 		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="E:\Java资料\javaweb\j2ee软件架构\test\msgpack-java-0.8.16"/>
 			<item value="E:\Java资料\netty\Netty权威指南-源代码\NettyBookSource\lib\netty-all-5.0.0.Alpha1-sources"/>
 		</list>
 	</section>
 	<section name="WorkbenchPreferenceDialogSettings">
-		<item value="8" key="DIALOG_Y_ORIGIN"/>
-		<item value="98" key="DIALOG_X_ORIGIN"/>
+		<item value="249" key="DIALOG_Y_ORIGIN"/>
+		<item value="1051" key="DIALOG_X_ORIGIN"/>
 	</section>
 	<section name="NewWizardAction">
-		<item value="com.genuitec.eclipse.ws.xfire.wizards.serverwizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<item value="com.genuitec.eclipse.maven.pro.wizard.libraryProject" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="com.genuitec.eclipse.myeclipse"/>
-			<item value="com.genuitec.eclipse.myeclipse/com.genuitec.eclipse.myeclipse.j2ee"/>
-			<item value="com.genuitec.eclipse.myeclipse/com.genuitec.eclipse.myeclipse.webservice"/>
+			<item value="com.genuitec.eclipse.myeclipse/com.genuitec.eclipse.myeclipse.maven"/>
 		</list>
 	</section>
 	<section name="ZipFileImportWizard">
 	</section>
 	<section name="EditorSelectionDialog">
 	</section>
+	<section name="FileSystemExportWizard">
+		<item value="false" key="WizardFileSystemResourceExportPage1.STORE_OVERWRITE_EXISTING_FILES_ID"/>
+		<item value="false" key="WizardFileSystemResourceExportPage1.STORE_CREATE_STRUCTURE_ID"/>
+		<list key="WizardFileSystemResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\lenovo\Desktop"/>
+		</list>
+	</section>
 	<section name="ImportExportAction">
 		<item value="org.eclipse.ui.wizards.import.FileSystem" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
+		<item value="org.eclipse.ui.wizards.export.FileSystem" key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID"/>
 		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
 			<item value="org.eclipse.ui.Basic"/>
 			<item value="org.eclipse.team.cvs.ui.importWizards"/>
+		</list>
+		<list key="ImportExportPage.STORE_EXPANDED_EXPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
 		</list>
 	</section>
 </section>

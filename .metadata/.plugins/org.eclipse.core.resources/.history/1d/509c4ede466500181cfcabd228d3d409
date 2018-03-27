@@ -1,0 +1,32 @@
+package com.nari.sun.netty;
+
+import java.util.List;
+
+import io.netty.buffer.ByteBuf;
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.handler.codec.ByteToMessageDecoder;
+
+public class MyDecoder extends ByteToMessageDecoder{
+
+	@Override
+	protected void decode(ChannelHandlerContext arg0, ByteBuf buf,
+			List<Object> out) throws Exception {
+		
+		byte[] msg = new byte[buf.readableBytes()];
+		buf.readBytes(msg);
+		int msgLength = (msg[6] << 8)| msg[7];
+		
+		System.out.println("消息体长度: "+msgLength);
+		if(msg.length <  msgLength){
+			return ;
+		}
+		if(msg.length - 8 == msgLength){
+			System.out.println("数据合法");
+			out.add(buf);
+		}else {
+			return ;
+		}
+		
+	}
+
+}

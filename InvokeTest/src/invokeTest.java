@@ -4,12 +4,14 @@ import java.lang.reflect.Member;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
+import javax.script.Invocable;
+
 
 public class invokeTest {
 
 		
 		
-		private String name;
+		private String name = "hello";
 		public String sex = "nan";
 		
 		volatile private static invokeTest in = null;
@@ -67,27 +69,29 @@ public class invokeTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		invokeTest invoke = new invokeTest();
 		Field []name = classTypeClass.getDeclaredFields();
 		Method [] methods = classTypeClass.getMethods();
 		for(Field name1 : name){
 			System.out.println(name1);
+			name1.setAccessible(true);
+			System.out.println(name1.get(invoke)+"88888888");
 		}
 		for(Method method1 : methods ){
-			System.out.println("²ÎÊýÃû³Æ£º     "+method1.getName());
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½     "+method1.getName());
 			Class<?> returnTypeClass = method1.getReturnType();
 			Class<?> []parament        = method1.getParameterTypes();
 			int xx = method1.getModifiers();
 			System.out.println(Modifier.toString(xx));
 			System.out.println(returnTypeClass.getName());
 			for(Class<?> p : parament){
-				System.out.println(" ²ÎÊýÁÐ±í: "+p.getName());
+				System.out.println(" ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½: "+p.getName());
 			}
 			
 		}
 		Method methods2 = classTypeClass.getMethod("setSex", String.class);
 		System.out.println(methods2);
-		System.out.println("¹¹Ôì·½·¨");
+		System.out.println("ï¿½ï¿½ï¿½ì·½ï¿½ï¿½");
 		Constructor<?>[] cons = classTypeClass.getDeclaredConstructors();
 		for(Constructor<?> con : cons){
 			System.out.println(con);
@@ -95,17 +99,17 @@ public class invokeTest {
 		Constructor<?> testConstructor = classTypeClass.getConstructor(String.class,String.class);
 		
 		
- 		System.out.println("·½·¨");
+ 		System.out.println("ï¿½ï¿½ï¿½ï¿½");
 		Object ooo = testConstructor.newInstance("sm","man");
 		Method meth = classTypeClass.getMethod("setSex", String.class);
-		System.out.println("²âÊÔµ÷ÓÃ·½·¨");
+		System.out.println("ï¿½ï¿½ï¿½Ôµï¿½ï¿½Ã·ï¿½ï¿½ï¿½");
 		meth.invoke(classTypeClass.newInstance(),"man" );
 		Method meth2 = classTypeClass.getMethod("getSex");
 		System.out.println(meth2.invoke(classTypeClass.newInstance()));
 		//System.out.println(((Member) ooo).getName());
 		
 		invokeTest inv = new invokeTest();
-		System.out.println("Àà¼ÓÔØÆ÷ :"+inv.getClass().getClassLoader().getClass().getName() );
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ :"+inv.getClass().getClassLoader().getClass().getName() );
 		
 		
 	}

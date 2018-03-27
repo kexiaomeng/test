@@ -1,0 +1,29 @@
+package com.nari.sun.netty;
+
+import io.netty.channel.EventLoopGroup;
+import io.netty.channel.nio.NioEventLoopGroup;
+
+public class NettyClient implements Runnable{
+	
+	private String host;
+	private int port;
+	private EventLoopGroup parent = null;
+
+	public NettyClient(String host,int port){
+		this.host = host;
+		this.port = port;
+	}
+	
+	public void connect(String host,int port){
+		
+		EventLoopGroup parent  = new NioEventLoopGroup();
+		
+		
+		
+	}
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		connect(host, port);
+	}
+}

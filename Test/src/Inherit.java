@@ -1,0 +1,195 @@
+import java.io.InputStreamReader;
+import java.net.InetAddress;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.Scanner;
+import java.util.TreeMap;
+
+import javax.lang.model.element.Element;
+
+
+public class Inherit {
+	
+	private StringBuilder parent1 = null;
+	private StringBuilder parent2 = null;
+	private StringBuilder child1 = null;
+	private StringBuilder child2 = null;
+	private int start;
+	private int end  ;
+	private int []N = new int [6];
+	//��map����ÿ��Ԫ�����ַ��ж�Ӧ���±�λ��
+	private Map<Integer, List<Integer>> groupMap = null;
+	public Inherit(String parent1,String parent2,int start,int end) {
+		this.parent1 = new StringBuilder(parent1);
+		this.parent2 = new StringBuilder(parent2);
+		this.start   = start;
+		this.end     = end;
+	}
+	
+	public void getChildString(){
+		String tmpString = null;
+		tmpString = parent1.substring(start+1,end);
+		child1 = parent1.replace(start+1, end, parent2.substring(start+1,end));
+		child2 = parent2.replace(start+1, end, tmpString);
+
+	}
+	/**
+	 * ��ȡ�Ӵ�ÿ���Ԫ��
+	 * @param child
+	 */
+	public String getMemberNumOfChild(String child){
+		groupMap = new TreeMap<Integer, List<Integer>>(); //Java��������Map����ÿ���Ӵ���Ҫ������ʼ��,
+		for(int i =0 ;i < child.length();i++){
+			switch ((child.charAt(i)-'0')) {
+			case 1:
+				if(groupMap.get(1) == null){
+					List<Integer> num1List = new ArrayList<Integer>();
+					num1List.add(i);
+					groupMap.put(1, num1List);
+				}else {
+					groupMap.get(1).add(i);
+				}
+				
+				break;
+			case 2:
+				if(groupMap.get(2) == null){
+					List<Integer> num2List = new ArrayList<Integer>();
+					num2List.add(i);
+					groupMap.put(2, num2List);
+				}else {
+					groupMap.get(2).add(i);
+				}
+				break;
+			case 3:
+				if(groupMap.get(3) == null){
+					List<Integer> num3List = new ArrayList<Integer>();
+					num3List.add(i);
+					groupMap.put(3, num3List);
+				}else {
+					groupMap.get(3).add(i);
+				}
+				break;
+			case 4:
+				if(groupMap.get(4) == null){
+					List<Integer> num4List = new ArrayList<Integer>();
+					num4List.add(i);
+					groupMap.put(4, num4List);
+				}else {
+					groupMap.get(4).add(i);
+				}
+				break;
+			case 5:
+				if(groupMap.get(5) == null){
+					List<Integer> num5List = new ArrayList<Integer>();
+					num5List.add(i);
+					groupMap.put(5, num5List);
+				}else {
+					groupMap.get(5).add(i);
+				}
+				break;
+			case 6:
+				if(groupMap.get(6) == null){
+					List<Integer> num6List = new ArrayList<Integer>();
+					num6List.add(i);
+					groupMap.put(6, num6List);
+				}else {
+					groupMap.get(6).add(i);
+				}
+				break;
+			default:
+				break;
+				}
+			}
+			
+			String result = deal(groupMap, new StringBuilder(child));
+			return result;
+		}
+	
+	/**
+	 * �����������
+	 * @param groupMap
+	 * @param child
+	 * @return
+	 */
+		public String deal(Map<Integer, List<Integer>> groupMap,StringBuilder child){
+			Random random = new Random(); //ȡ�������
+			
+			for(Map.Entry<Integer, List<Integer>> numEntry : groupMap.entrySet()){
+				int elementNum = numEntry.getValue().size();  //��ȡÿ���Ԫ�ظ���
+				
+				if(elementNum >4){  //������4 ����з���
+					for(Map.Entry<Integer, List<Integer>> num1Entry : groupMap.entrySet()){   //���Ԫ����ֵ��С�����������
+						int elementNum1 = num1Entry.getValue().size();  //��ȡÿ���Ԫ�ظ���ÿ���滻������ͳ����Ŀ
+						while(elementNum1 < 4 ) {  // wΪȱ��Ԫ�ص������Ԫ��
+							int replacePosition = 0;
+							replacePosition = random.nextInt(elementNum);//ȡ�������
+							int positionOfString = numEntry.getValue().get(replacePosition);// �滻��λ�����ַ��е�λ��
+							child.replace(positionOfString, positionOfString+1, String.valueOf(num1Entry.getKey()));
+							numEntry.getValue().remove(replacePosition);//��ԭ��������ɾ���滻��Ԫ��
+							elementNum  --;  //�������������1
+							elementNum1 ++;
+							
+							num1Entry.getValue().add(positionOfString);
+							if(elementNum == 4){
+								break;
+							}
+						}
+						if(elementNum == 4){
+							break;
+						}
+					}
+				}
+			}
+			return child.toString();
+		}
+		
+		public String getchild1(){
+			return child1.toString();
+		}
+		public String getchild2(){
+			return child2.toString();
+		}
+
+	public static void main(String[] args) {
+		
+		
+//		System.out.println("�������ѷ���ĸ���1������2�Լ���Ӧ�Ľ���λ����ʼ�ͽ���λ��");
+//		Scanner scanner = new Scanner(System.in);
+//		String parent1 = null;
+//		String parent2 = null;
+//		int start,end;
+//		System.out.print("����1: ");
+//		parent1 = scanner.nextLine();
+//		System.out.print("����2: ");
+//		parent2 = scanner.nextLine();
+//		System.out.print("��ʼλ��: ");
+//		start   = scanner.nextInt();
+//		System.out.print("����λ��: ");
+//		end     = scanner.nextInt();
+//		
+//		Inherit test = new Inherit(parent1, parent2, start, end);
+//		test.getChildString();
+//		System.out.println("�Ӵ�1������: "+test.getMemberNumOfChild(test.getchild1()));
+//		System.out.println("�Ӵ�2������: "+test.getMemberNumOfChild(test.getchild2()));
+		
+		
+		String localName = "";
+		InetAddress ia = null;
+
+		try {
+			ia = InetAddress.getLocalHost();
+			localName = ia.getHostName().toLowerCase();
+		} catch (Exception e) {
+
+		}
+		System.out.println(localName);
+
+	System.out.println("hello\n");
+	System.out.println("11111");
+		
+	}
+}
