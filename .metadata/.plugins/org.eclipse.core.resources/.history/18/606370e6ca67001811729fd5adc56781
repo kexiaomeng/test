@@ -21,8 +21,6 @@ public class TestHandler extends ChannelHandlerAdapter{
 	public TestHandler(){
 		
 	}
-	
-	
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg){
 		
