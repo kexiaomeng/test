@@ -10,7 +10,7 @@ public class ClientMoreMain {
 		
 		
 		ExecutorService executorService = Executors.newCachedThreadPool();
-		for(int i = 0;i < 10 ;i++){
+		for(int i = 0;i < 1 ;i++){
 			executorService.submit(new NettyClient("127.0.0.1", 8080));
 
 		}

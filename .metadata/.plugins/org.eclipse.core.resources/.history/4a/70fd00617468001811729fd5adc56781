@@ -1,0 +1,12 @@
+package com.nari.sun.netty;
+
+import io.netty.channel.ChannelHandlerAdapter;
+import io.netty.channel.ChannelHandlerContext;
+
+public abstract class AbstractHeartBeat  extends ChannelHandlerAdapter{
+
+	
+	
+	public abstract void handleData(ChannelHandlerContext ctx,ByteBuf obj);
+	
+}

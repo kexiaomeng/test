@@ -1,0 +1,5 @@
+package com.nari.sun.netty;
+
+public class AbstractHeartBeat {
+
+}

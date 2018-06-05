@@ -3,6 +3,7 @@ package com.nari.sun.netty;
 import java.net.SocketAddress;
 import java.nio.charset.Charset;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.TimeUnit;
 
 import com.sun.corba.se.impl.orbutil.closure.Future;
 
@@ -24,6 +25,7 @@ import io.netty.handler.codec.LineBasedFrameDecoder;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
+import io.netty.handler.timeout.IdleStateHandler;
 
 public class NettyServer {
 	
@@ -40,11 +42,12 @@ public class NettyServer {
 		option(ChannelOption.SO_BACKLOG, 1024).channel(NioServerSocketChannel.class).childHandler(new ChannelInitializer<SocketChannel>() {
 				@Override
 				public void initChannel(SocketChannel arg0) throws Exception{
-//					arg0.pipeline().addLast("LineBased",new LineBasedFrameDecoder(20));
-					arg0.pipeline().addLast(new MyDecoder());
-//					arg0.pipeline().addLast(new LengthFieldBasedFrameDecoder(100,6,2,0,0,false));
+					arg0.pipeline().addLast("IdleHandler",new IdleStateHandler(10, 0, 0,TimeUnit.SECONDS));
+					arg0.pipeline().addLast("LineBased",new LineBasedFrameDecoder(20));
+//					arg0.pipeline().addLast(new MyDecoder());
+					arg0.pipeline().addLast(new StringDecoder());
 					
-					arg0.pipeline().addLast( new TestHandler());
+					arg0.pipeline().addLast(new TestHandler());
 				}
 			});
 		

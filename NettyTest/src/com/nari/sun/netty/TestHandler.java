@@ -13,11 +13,15 @@ import io.netty.buffer.ByteBufUtil;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
+import io.netty.handler.timeout.IdleState;
+import io.netty.handler.timeout.IdleStateEvent;
 
 
 public class TestHandler extends ChannelHandlerAdapter{
 	
-	private static  int count = 0;
+	
+	private   int count = 0;
+	private NettyClient client;
 	public TestHandler(){
 		
 	}
@@ -27,11 +31,14 @@ public class TestHandler extends ChannelHandlerAdapter{
 	public void channelRead(ChannelHandlerContext ctx, Object msg){
 		
 		try {
-			ByteBuf buffer =  (ByteBuf)msg;
-			byte[] bu = new byte[buffer.readableBytes()];
-			buffer.readBytes(bu);
-//			System.out.println(buffer.release());
-			System.out.println(ByteBufUtil.hexDump(bu));
+//			ByteBuf buffer =  (ByteBuf)msg;
+//			byte[] bu = new byte[buffer.readableBytes()];
+//			buffer.readBytes(bu);
+////			System.out.println(buffer.release());
+//			System.out.println(ByteBufUtil.hexDump(bu));
+			
+			String mesg = (String)msg;
+			System.out.println(msg);
 			
 		} catch (Exception e) {
 			System.out.println(e);
@@ -41,9 +48,9 @@ public class TestHandler extends ChannelHandlerAdapter{
 //		ctx.writeAndFlush("back to client");
 		System.out.println("received from client"+ctx.channel().remoteAddress());
 //		System.out.println("message: "+(String)msg);
-		ByteBuf mes = Unpooled.directBuffer();
-		
-		ctx.writeAndFlush(mes.writeBytes("Hello World\n".getBytes()));
+//		ByteBuf mes = Unpooled.directBuffer();
+//		
+//		ctx.writeAndFlush(mes.writeBytes("HEART_BEAT".getBytes()));
 
 //		ctx.writeAndFlush("hello world 1");
 	}
@@ -52,8 +59,31 @@ public class TestHandler extends ChannelHandlerAdapter{
 		System.out.println("client "+ count++);
 		
 	}
-
 	
+	
+
+	@Override
+	public void userEventTriggered(ChannelHandlerContext ctx,Object obj){
+		if(obj instanceof IdleStateEvent){
+			IdleStateEvent tmp = (IdleStateEvent)obj;
+			if(tmp.state() == IdleState.READER_IDLE){
+				System.out.println("lose CONNECTION");
+				count++;
+				if(count>2){
+					System.out.println("timeout over 2");
+					ctx.channel().close();
+				}
+			}else {
+				try {
+					super.userEventTriggered(ctx, obj);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+		}
+	}
 	  public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause)
       throws Exception
   {
