@@ -11,13 +11,12 @@ public abstract class AbstractHeartBeat  extends ChannelHandlerAdapter{
 	
 	@Override
 	public void channelRead(ChannelHandlerContext ctx,Object obj){
-//		ByteBuf buf = (ByteBuf)obj;
-		String buf = (String)obj;
-		switch (buf.charAt(0) ) {
-		case '2':
+		ByteBuf buf = (ByteBuf)obj;
+		switch (buf.getByte(2)) {
+		case 0x01:
 			
 			break;
-		case '1':
+		case 0x02:
 			
 			break;
 		default:
@@ -32,10 +31,10 @@ public abstract class AbstractHeartBeat  extends ChannelHandlerAdapter{
 			IdleStateEvent tmpEvent = (IdleStateEvent)obj;
 			switch (tmpEvent.state()) {
 			case READER_IDLE:
-				dealIdleRead(ctx);
+				dealIdleRead();
 				break;
 			case WRITER_IDLE:
-				dealIdleWrite(ctx);
+				dealIdleWrite();
 				break;
 
 			default:
@@ -43,8 +42,8 @@ public abstract class AbstractHeartBeat  extends ChannelHandlerAdapter{
 			}
 		}
 	}
-	public abstract void handleData(ChannelHandlerContext ctx,Object obj);
+	public abstract void handleData(ChannelHandlerContext ctx,ByteBuf obj);
 	
-	public abstract void dealIdleRead(ChannelHandlerContext ctx);
-	public abstract void dealIdleWrite(ChannelHandlerContext ctx);
+	public abstract void dealIdleRead();
+	public abstract void dealIdleWrite();
 }

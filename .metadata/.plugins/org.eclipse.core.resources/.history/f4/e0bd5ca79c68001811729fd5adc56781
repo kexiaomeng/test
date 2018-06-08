@@ -17,7 +17,7 @@ import io.netty.handler.timeout.IdleState;
 import io.netty.handler.timeout.IdleStateEvent;
 
 
-public class TestHandler extends AbstractHeartBeat{
+public class TestHandler extends ChannelHandlerAdapter{
 	
 	
 	private   int count = 0;
@@ -26,7 +26,7 @@ public class TestHandler extends AbstractHeartBeat{
 		
 	}
 	
-	/*
+	
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg){
 		
@@ -53,7 +53,7 @@ public class TestHandler extends AbstractHeartBeat{
 //		ctx.writeAndFlush(mes.writeBytes("HEART_BEAT".getBytes()));
 
 //		ctx.writeAndFlush("hello world 1");
-	}*/
+	}
 	@Override
 	public void channelActive(ChannelHandlerContext ctx){
 		System.out.println("client "+ count++);
@@ -62,28 +62,28 @@ public class TestHandler extends AbstractHeartBeat{
 	
 	
 
-//	@Override
-//	public void userEventTriggered(ChannelHandlerContext ctx,Object obj){
-//		if(obj instanceof IdleStateEvent){
-//			IdleStateEvent tmp = (IdleStateEvent)obj;
-//			if(tmp.state() == IdleState.READER_IDLE){
-//				System.out.println("lose CONNECTION");
-//				count++;
-//				if(count>2){
-//					System.out.println("timeout over 2");
-//					ctx.channel().close();
-//				}
-//			}else {
-//				try {
-//					super.userEventTriggered(ctx, obj);
-//				} catch (Exception e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-//			}
-//			
-//		}
-//	}
+	@Override
+	public void userEventTriggered(ChannelHandlerContext ctx,Object obj){
+		if(obj instanceof IdleStateEvent){
+			IdleStateEvent tmp = (IdleStateEvent)obj;
+			if(tmp.state() == IdleState.READER_IDLE){
+				System.out.println("lose CONNECTION");
+				count++;
+				if(count>2){
+					System.out.println("timeout over 2");
+					ctx.channel().close();
+				}
+			}else {
+				try {
+					super.userEventTriggered(ctx, obj);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+		}
+	}
 	  public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause)
       throws Exception
   {
@@ -92,28 +92,5 @@ public class TestHandler extends AbstractHeartBeat{
 		  System.out.println(cause);
       ctx.fireExceptionCaught(cause);
   }
-
-
-	@Override
-	public void dealIdleRead(ChannelHandlerContext ctx) {
-		// TODO Auto-generated method stub
-		System.out.println("read idle");
-
-	}
-
-
-	@Override
-	public void dealIdleWrite(ChannelHandlerContext ctx) {
-		// TODO Auto-generated method stub
-		System.out.println("write idle");
-	}
-
-
-	@Override
-	public void handleData(ChannelHandlerContext ctx, Object obj) {
-		// TODO Auto-generated method stub
-		System.out.println(" handle data");
-
-	}
 		
 }

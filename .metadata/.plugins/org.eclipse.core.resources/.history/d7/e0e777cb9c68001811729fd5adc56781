@@ -62,28 +62,28 @@ public class TestHandler extends AbstractHeartBeat{
 	
 	
 
-//	@Override
-//	public void userEventTriggered(ChannelHandlerContext ctx,Object obj){
-//		if(obj instanceof IdleStateEvent){
-//			IdleStateEvent tmp = (IdleStateEvent)obj;
-//			if(tmp.state() == IdleState.READER_IDLE){
-//				System.out.println("lose CONNECTION");
-//				count++;
-//				if(count>2){
-//					System.out.println("timeout over 2");
-//					ctx.channel().close();
-//				}
-//			}else {
-//				try {
-//					super.userEventTriggered(ctx, obj);
-//				} catch (Exception e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-//			}
-//			
-//		}
-//	}
+	@Override
+	public void userEventTriggered(ChannelHandlerContext ctx,Object obj){
+		if(obj instanceof IdleStateEvent){
+			IdleStateEvent tmp = (IdleStateEvent)obj;
+			if(tmp.state() == IdleState.READER_IDLE){
+				System.out.println("lose CONNECTION");
+				count++;
+				if(count>2){
+					System.out.println("timeout over 2");
+					ctx.channel().close();
+				}
+			}else {
+				try {
+					super.userEventTriggered(ctx, obj);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+		}
+	}
 	  public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause)
       throws Exception
   {
@@ -95,25 +95,23 @@ public class TestHandler extends AbstractHeartBeat{
 
 
 	@Override
-	public void dealIdleRead(ChannelHandlerContext ctx) {
+	public void dealIdleRead() {
 		// TODO Auto-generated method stub
-		System.out.println("read idle");
-
+		
 	}
 
 
 	@Override
-	public void dealIdleWrite(ChannelHandlerContext ctx) {
+	public void dealIdleWrite() {
 		// TODO Auto-generated method stub
-		System.out.println("write idle");
+		
 	}
 
 
 	@Override
-	public void handleData(ChannelHandlerContext ctx, Object obj) {
+	public void handleData(ChannelHandlerContext ctx, ByteBuf obj) {
 		// TODO Auto-generated method stub
-		System.out.println(" handle data");
-
+		
 	}
 		
 }

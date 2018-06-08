@@ -110,7 +110,7 @@ public class TestHandler extends AbstractHeartBeat{
 
 
 	@Override
-	public void handleData(ChannelHandlerContext ctx, Object obj) {
+	public void handleData(ChannelHandlerContext ctx, ByteBuf obj) {
 		// TODO Auto-generated method stub
 		System.out.println(" handle data");
 

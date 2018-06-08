@@ -95,7 +95,7 @@ public class TestHandler extends AbstractHeartBeat{
 
 
 	@Override
-	public void dealIdleRead(ChannelHandlerContext ctx) {
+	public void dealIdleRead() {
 		// TODO Auto-generated method stub
 		System.out.println("read idle");
 
@@ -103,14 +103,14 @@ public class TestHandler extends AbstractHeartBeat{
 
 
 	@Override
-	public void dealIdleWrite(ChannelHandlerContext ctx) {
+	public void dealIdleWrite() {
 		// TODO Auto-generated method stub
 		System.out.println("write idle");
 	}
 
 
 	@Override
-	public void handleData(ChannelHandlerContext ctx, Object obj) {
+	public void handleData(ChannelHandlerContext ctx, ByteBuf obj) {
 		// TODO Auto-generated method stub
 		System.out.println(" handle data");
 
