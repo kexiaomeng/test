@@ -10,7 +10,7 @@ public abstract class AbstractHeartBeat  extends ChannelHandlerAdapter{
 
 	
 	@Override
-	public void channelRead(ChannelHandlerContext ctx,Object obj){
+	public void channelRead(ChannelHandlerContext/*产生更短的事件流 可以用来获得更多的性能*/ ctx,Object obj){
 //		ByteBuf buf = (ByteBuf)obj;
 		String buf = (String)obj;
 		switch (buf.charAt(0) ) {

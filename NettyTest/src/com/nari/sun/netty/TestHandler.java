@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.sun.org.apache.xalan.internal.xsltc.dom.MultiValuedNodeHeapIterator.HeapNode;
+import com.sun.org.apache.xml.internal.security.encryption.Reference;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufUtil;
@@ -15,6 +16,7 @@ import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.timeout.IdleState;
 import io.netty.handler.timeout.IdleStateEvent;
+import io.netty.util.ReferenceCountUtil;
 
 
 public class TestHandler extends AbstractHeartBeat{
@@ -113,6 +115,8 @@ public class TestHandler extends AbstractHeartBeat{
 	public void handleData(ChannelHandlerContext ctx, Object obj) {
 		// TODO Auto-generated method stub
 		System.out.println(" handle data");
+		ReferenceCountUtil.release(obj);
+		System.out.println();
 
 	}
 		

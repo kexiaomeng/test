@@ -4,6 +4,8 @@ import java.nio.ByteBuffer;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
+import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.timeout.IdleState;
@@ -31,8 +33,20 @@ public class ClientHandler extends ChannelHandlerAdapter{
 //    		ctx.writeAndFlush(buf);
 //    		if (!buf.isWritable())
 //    		    System.out.println("Send order 2 server succeed.");
-		ctx.writeAndFlush(Unpooled.directBuffer().writeBytes(bufferString.getBytes()));
+		ChannelFuture future = ctx.writeAndFlush(Unpooled.directBuffer().writeBytes(bufferString.getBytes()));
 //    	}
+		
+		future.addListener(new ChannelFutureListener() {
+			
+			@Override
+			public void operationComplete(ChannelFuture f) throws Exception {
+				// TODO Auto-generated method stub
+				if(!f.isSuccess()){
+					f.cause().printStackTrace();
+					f.channel().close();
+				}
+			}
+		});
 	}
 	@Override
 	public void channelRead(ChannelHandlerContext ctx,Object obj){
@@ -84,7 +98,10 @@ public class ClientHandler extends ChannelHandlerAdapter{
 //					ByteBuf HEAR_BEAT1 = Unpooled.directBuffer().writeBytes("HeartBeat\n".getBytes());
 					ctx.writeAndFlush(HEAR_BEAT.copy());
 					System.out.println("heart_beat status ,"+HEAR_BEAT.readerIndex()+","+HEAR_BEAT.writerIndex());
-//					HEAR_BEAT.readerIndex(0);
+//					
+					HEAR_BEAT.readerIndex(0);
+//					ReferenceCountUtil.release(HEAR_BEAT);
+
 				}
 			}
 		}

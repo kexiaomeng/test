@@ -1,0 +1,29 @@
+
+import org.junit.Before;
+import org.junit.BeforeClass;
+
+/**
+ * 
+ */
+
+/**
+ * @author lenovo
+ *
+ */
+public class CaseTest {
+
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@Before
+	public void setUp() throws Exception {
+	}
+
+}
