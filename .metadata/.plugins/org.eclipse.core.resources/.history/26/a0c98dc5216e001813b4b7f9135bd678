@@ -1,5 +1,0 @@
-package com.nari.sun.codec;
-
-public class MarshallingEncoder {
-
-}

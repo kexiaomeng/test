@@ -1,7 +1,0 @@
-package com.nari.sun.netty;
-
-public class Snippet {
-	protected Object decode(ChannelHandlerContext ctx, ByteBuf in)
-	        throws Exception
-}
-

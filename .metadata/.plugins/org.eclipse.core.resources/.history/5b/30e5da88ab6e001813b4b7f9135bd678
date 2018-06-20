@@ -1,5 +1,0 @@
-package com.nari.sun.netty.handler;
-
-public class HeartBeartReqHandler {
-
-}

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testrun name="CaseTest" project="NettyTest" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="CaseTest" time="1.836">
-    <testcase name="testHandler" classname="CaseTest" time="1.836"/>
-  </testsuite>
-</testrun>

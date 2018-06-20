@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="26" version="2.0">
 <workbenchAdvisor/>
-<window height="728" maximized="true" minimized="true" width="951" x="1623" y="50">
+<window height="728" maximized="true" width="951" x="1623" y="50">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
 </perspectiveBar>
 <coolbarLayout locked="0">
 <coolItem id="group.file" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="250" y="22"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="101" y="22"/>
 <coolItem id="additions" itemType="typeGroupMarker"/>
 <coolItem id="com.genuitec.eclipse.j2eedt.core.ejb" itemType="typeToolBarContribution" x="55" y="22"/>
 <coolItem id="com.genuitec.eclipse.uml.actions" itemType="typeToolBarContribution" x="61" y="22"/>
@@ -23,7 +23,7 @@
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="147" y="22"/>
 <coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="107" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="115" y="22"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="198" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
@@ -36,7 +36,7 @@
 <coolItem id="org.eclipse.ui.browser.editor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="net.sf.jadclipse.JadclipseClassFileEditor" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="com.genuitec.eclipse.springframework.springconfigeditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -59,7 +59,7 @@
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NettyClient.java" partName="NettyClient.java" path="E:/Java资料/javaweb/j2ee软件架构/test/NettyTest/src/com/nari/sun/netty/main/NettyClient.java" title="NettyClient.java" tooltip="NettyTest/src/com/nari/sun/netty/main/NettyClient.java" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NettyClient.java" partName="NettyClient.java" path="E:/Java资料/javaweb/j2ee软件架构/test/NettyTest/src/com/nari/sun/netty/main/NettyClient.java" title="NettyClient.java" tooltip="NettyTest/src/com/nari/sun/netty/main/NettyClient.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NettyTest/src/com/nari/sun/netty/main/NettyClient.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1326" selectionTopPixel="109"/>
 </editor>
@@ -75,9 +75,9 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NettyTest/src/proto/SubReqClient.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SubScribeReq1.java" partName="SubScribeReq1.java" path="E:/Java资料/javaweb/j2ee软件架构/test/NettyTest/src/proto/SubScribeReq1.java" title="SubScribeReq1.java" tooltip="NettyTest/src/proto/SubScribeReq1.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SubScribeReq1.java" partName="SubScribeReq1.java" path="E:/Java资料/javaweb/j2ee软件架构/test/NettyTest/src/proto/SubScribeReq1.java" title="SubScribeReq1.java" tooltip="NettyTest/src/proto/SubScribeReq1.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NettyTest/src/proto/SubScribeReq1.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="29044" selectionTopPixel="20119"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="27148" selectionTopPixel="18118"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SubScribeResp.java" partName="SubScribeResp.java" path="E:/Java资料/javaweb/j2ee软件架构/test/NettyTest/src/proto/SubScribeResp.java" title="SubScribeResp.java" tooltip="NettyTest/src/proto/SubScribeResp.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NettyTest/src/proto/SubScribeResp.java"/>
@@ -163,7 +163,7 @@
 <view id="org.eclipse.jdt.ui.SourceView" partName="Declaration"/>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.ui.console.ConsoleView" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="com.genuitec.myeclipse.perspective.MyEclipsePerspectiveFactory" id="com.genuitec.myeclipse.perspective.myeclipseperspective" label="MyEclipse Java Enterprise"/>
 <alwaysOnActionSet id="com.genuitec.myeclipse.actions.deploytools"/>
@@ -460,7 +460,7 @@
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.15424354" ratioLeft="209" ratioRight="1146" relationship="2" relative="left"/>
-<info folder="true" part="bottom" ratio="0.8896321" ratioLeft="532" ratioRight="66" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="bottom" ratio="0.5499463" ratioLeft="512" ratioRight="419" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
@@ -522,28 +522,11 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NettyTest/src/proto/SubScribeResp.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NettyTest/src/proto/SubReqServer.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NettyTest/src/proto/SubReqHandler.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" path="/test620/pom.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/test620/src/main/java/test620/App.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/test620/src/test/java/test620/AppTest.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NettyTest/src/com/nari/sun/netty/main/NettyClient.java"/>
 </editors>
-<item historyLabel="TimeClientHandle.java" index="4">
-<position info="not_deleted" x="1530" y="0"/>
-</item>
-<item historyLabel="TestHandler.java" index="5">
-<position info="not_deleted" x="938" y="0"/>
-</item>
-<item historyLabel="NettyServer.java" index="0">
-<position info="not_deleted" x="1294" y="0"/>
-</item>
-<item historyLabel="ClientMoreMain.java" index="2">
-<position info="not_deleted" x="198" y="0"/>
-</item>
-<item historyLabel="NettyServer.java" index="0">
-<position info="not_deleted" x="1294" y="0"/>
-</item>
-<item historyLabel="TimeClientHandle.java" index="4">
-<position info="not_deleted" x="1530" y="0"/>
-</item>
-<item historyLabel="ClientMoreMain.java" index="2">
-<position info="not_deleted" x="198" y="0"/>
-</item>
 <item historyLabel="NettyClient.java" index="1">
 <position info="not_deleted" x="103" y="0"/>
 </item>
@@ -670,8 +653,25 @@
 <item historyLabel="SubReqHandler.java" index="15">
 <position info="not_deleted" x="285" y="0"/>
 </item>
-<item active="true" historyLabel="SubScribeReq1.java" index="12">
+<item historyLabel="SubScribeReq1.java" index="12">
 <position info="not_deleted" x="126" y="13"/>
+</item>
+<item historyLabel="pom.xml" index="16"/>
+<item historyLabel="App.java" index="17">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="AppTest.java" index="18">
+<position info="not_deleted" x="197" y="0"/>
+</item>
+<item historyLabel="App.java" index="17">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="pom.xml" index="16"/>
+<item historyLabel="SubScribeReq1.java" index="12">
+<position info="not_deleted" x="29044" y="0"/>
+</item>
+<item active="true" historyLabel="NettyClient.java" index="19">
+<position info="not_deleted" x="1326" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -690,6 +690,15 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AppTest.java" tooltip="test620/src/test/java/test620/AppTest.java">
+<persistable path="/test620/src/test/java/test620/AppTest.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="App.java" tooltip="test620/src/main/java/test620/App.java">
+<persistable path="/test620/src/main/java/test620/App.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="pom.xml" tooltip="test620/pom.xml">
+<persistable path="/test620/pom.xml"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SubReqHandler.java" tooltip="NettyTest/src/proto/SubReqHandler.java">
 <persistable path="/NettyTest/src/proto/SubReqHandler.java"/>
 </file>
@@ -725,15 +734,6 @@
 </file>
 <file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="net.sf.jadclipse.JadclipseClassFileEditor" name="FutureTask.class" tooltip="java.util.concurrent.FutureTask">
 <persistable org.eclipse.jdt.ui.ClassFileIdentifier="=Awt/C:\/Program Files\/Java\/jdk1.7.0_80\/jre\/lib\/rt.jar&lt;java.util.concurrent(FutureTask.class"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SubReqClientHandler.java" tooltip="NettyTest/src/proto/SubReqClientHandler.java">
-<persistable path="/NettyTest/src/proto/SubReqClientHandler.java"/>
-</file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="net.sf.jadclipse.JadclipseClassFileEditor" name="ChannelHandlerAdapter.class" tooltip="io.netty.channel.ChannelHandlerAdapter">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=NettyTest/\/NettyBookSource\/lib\/netty-all-5.0.0.Alpha1.jar&lt;io.netty.channel(ChannelHandlerAdapter.class"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ClientHandler.java" tooltip="NettyTest/src/com/nari/sun/netty/ClientHandler.java">
-<persistable path="/NettyTest/src/com/nari/sun/netty/ClientHandler.java"/>
 </file>
 </mruList>
 </workbench>
