@@ -1,0 +1,95 @@
+package com.nari.sun.netty.main;
+
+import java.net.InetSocketAddress;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
+import com.google.protobuf.Option;
+import com.nari.sun.netty.codec.NettyMessageDecoder;
+import com.nari.sun.netty.codec.NettyMessageEncoder;
+import com.nari.sun.netty.handler.HeartBeatReqHandler;
+import com.nari.sun.netty.handler.LoginAuthReqHandler;
+import com.nari.sun.netty.util.NettyConstant;
+
+import io.netty.bootstrap.Bootstrap;
+import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelInitializer;
+import io.netty.channel.ChannelOption;
+import io.netty.channel.EventLoopGroup;
+import io.netty.channel.nio.NioEventLoopGroup;
+import io.netty.channel.socket.SocketChannel;
+import io.netty.channel.socket.nio.NioSocketChannel;
+
+import io.netty.handler.timeout.ReadTimeoutHandler;
+
+public class NettyClient{
+	
+	private String host;
+	private int port;
+	private EventLoopGroup parent;
+	private ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
+	ChannelFuture  future;
+
+	
+	
+	public void connect() throws InterruptedException{
+		
+		parent = new NioEventLoopGroup();
+		Bootstrap client = new Bootstrap();
+		
+		try {
+			client.group(parent).option(ChannelOption.SO_BACKLOG, 1024).channel(NioSocketChannel.class)
+			.option(ChannelOption.SO_REUSEADDR, true)
+			.handler(new ChannelInitializer<SocketChannel>() {
+
+				@Override
+				protected void initChannel(SocketChannel arg0) throws Exception {
+					arg0.pipeline().addLast("messageDecoder",new NettyMessageDecoder(1024, 4, 4));
+					arg0.pipeline().addLast("messageEncoder",new NettyMessageEncoder());
+					arg0.pipeline().addLast("readTimeOutHandler",new ReadTimeoutHandler(50));
+					arg0.pipeline().addLast("loginAuth",new LoginAuthReqHandler());
+					arg0.pipeline().addLast("heartbeat",new HeartBeatReqHandler());
+				}
+				
+				
+				
+			});
+			//登陆方式为按照固定端口登陆
+			future  = client.connect(new InetSocketAddress(NettyConstant.REMOTEIP, NettyConstant.PORT), new InetSocketAddress(NettyConstant.LOCALIP, NettyConstant.LOCAL_PORT)).sync();
+			future.channel().closeFuture().sync();
+			
+		}finally{
+			parent.shutdownGracefully();
+			executor.execute(new Runnable() {
+				
+				@Override
+				public void run() {
+					try {
+						TimeUnit.SECONDS.sleep(20);
+						System.out.println("断线重连");
+						connect();
+					} catch (Exception e) {
+						// TODO: handle exception
+						e.printStackTrace();
+					}
+					
+				}
+			});
+		
+		}
+		
+		
+		
+	}
+	
+	public static void main(String[] args) throws InterruptedException {
+		
+		
+		
+		new NettyClient().connect();
+
+	}
+	
+}

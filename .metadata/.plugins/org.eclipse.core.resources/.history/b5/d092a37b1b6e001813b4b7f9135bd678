@@ -1,0 +1,5 @@
+package com.nari.sun.nettyProtocol;
+
+public class NettyMessage {
+
+}

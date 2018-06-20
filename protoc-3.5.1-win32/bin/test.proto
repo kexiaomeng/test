@@ -1,0 +1,20 @@
+package demo;
+
+option java_package = "com.nari.sun";
+option java_outer_classname = "SunTest";
+
+message SunTest{
+	required int32 id =1;
+	required string name = 2;
+	option string email = "307621564@qq.com";
+	
+	enum Sex ={
+		MAN = 0;
+		WOMAN = 1;
+	}
+	
+	message PhoneNumber{
+	required String number = 1;
+	optional Sex sex = 0 [default = MAN]
+	}
+}

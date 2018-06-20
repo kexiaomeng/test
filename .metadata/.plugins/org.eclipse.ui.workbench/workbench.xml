@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="33" version="2.0">
+<workbench progressCount="26" version="2.0">
 <workbenchAdvisor/>
-<window height="728" maximized="true" width="951" x="876" y="9">
+<window height="728" maximized="true" minimized="true" width="951" x="1623" y="50">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
 </perspectiveBar>
 <coolbarLayout locked="0">
 <coolItem id="group.file" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="151" y="22"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="250" y="22"/>
 <coolItem id="additions" itemType="typeGroupMarker"/>
 <coolItem id="com.genuitec.eclipse.j2eedt.core.ejb" itemType="typeToolBarContribution" x="55" y="22"/>
 <coolItem id="com.genuitec.eclipse.uml.actions" itemType="typeToolBarContribution" x="61" y="22"/>
@@ -55,61 +55,41 @@
 <part id="5"/>
 <part id="6"/>
 <part id="7"/>
-<part id="8"/>
-<part id="9"/>
-<part id="10"/>
-<part id="11"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NettyServer.java" partName="NettyServer.java" path="E:/Java资料/javaweb/j2ee软件架构/test/NettyTest/src/com/nari/sun/netty/NettyServer.java" title="NettyServer.java" tooltip="NettyTest/src/com/nari/sun/netty/NettyServer.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NettyTest/src/com/nari/sun/netty/NettyServer.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1093" selectionTopPixel="0"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NettyClient.java" partName="NettyClient.java" path="E:/Java资料/javaweb/j2ee软件架构/test/NettyTest/src/com/nari/sun/netty/main/NettyClient.java" title="NettyClient.java" tooltip="NettyTest/src/com/nari/sun/netty/main/NettyClient.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NettyTest/src/com/nari/sun/netty/main/NettyClient.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1326" selectionTopPixel="109"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TimeClientHandle.java" partName="TimeClientHandle.java" path="E:/Java资料/netty/Netty权威指南-源代码/NettyBookSource/src/com/phei/netty/nio/TimeClientHandle.java" title="TimeClientHandle.java" tooltip="NettyBookSource/src/com/phei/netty/nio/TimeClientHandle.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NettyBookSource/src/com/phei/netty/nio/TimeClientHandle.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1530" selectionTopPixel="276"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HeartBeatReqHandler.java" partName="HeartBeatReqHandler.java" path="E:/Java资料/javaweb/j2ee软件架构/test/NettyTest/src/com/nari/sun/netty/handler/HeartBeatReqHandler.java" title="HeartBeatReqHandler.java" tooltip="NettyTest/src/com/nari/sun/netty/handler/HeartBeatReqHandler.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NettyTest/src/com/nari/sun/netty/handler/HeartBeatReqHandler.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1529" selectionTopPixel="776"/>
 </editor>
-<editor id="net.sf.jadclipse.JadclipseClassFileEditor" name="ByteBufUtil.class" partName="ByteBufUtil.class" title="ByteBufUtil.class" tooltip="io.netty.buffer.ByteBufUtil" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" org.eclipse.jdt.ui.ClassFileIdentifier="=NettyTest/\/NettyBookSource\/lib\/netty-all-5.0.0.Alpha1.jar&lt;io.netty.buffer(ByteBufUtil.class"/>
-<editorState selectionHorizontalPixel="0" selectionLength="7" selectionOffset="1276" selectionTopPixel="644"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyDecoder.java" partName="MyDecoder.java" path="E:/Java资料/javaweb/j2ee软件架构/test/NettyTest/src/com/nari/sun/netty/MyDecoder.java" title="MyDecoder.java" tooltip="NettyTest/src/com/nari/sun/netty/MyDecoder.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NettyTest/src/com/nari/sun/netty/MyDecoder.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="597" selectionTopPixel="615"/>
-</editor>
-<editor id="net.sf.jadclipse.JadclipseClassFileEditor" name="ByteToMessageDecoder.class" partName="ByteToMessageDecoder.class" title="ByteToMessageDecoder.class" tooltip="io.netty.handler.codec.ByteToMessageDecoder" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" org.eclipse.jdt.ui.ClassFileIdentifier="=NettyTest/\/NettyBookSource\/lib\/netty-all-5.0.0.Alpha1.jar&lt;io.netty.handler.codec(ByteToMessageDecoder.class"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6344" selectionTopPixel="4669"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ByteToMessageDecoder.java" partName="ByteToMessageDecoder.java" path="E:/Java资料/netty/Netty权威指南-源代码/NettyBookSource/lib/netty-all-5.0.0.Alpha1-sources/io/netty/handler/codec/ByteToMessageDecoder.java" title="ByteToMessageDecoder.java" tooltip="NettyBookSource/lib/netty-all-5.0.0.Alpha1-sources/io/netty/handler/codec/ByteToMessageDecoder.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NettyBookSource/lib/netty-all-5.0.0.Alpha1-sources/io/netty/handler/codec/ByteToMessageDecoder.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5575" selectionTopPixel="2415"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NettyClient.java" partName="NettyClient.java" path="E:/Java资料/javaweb/j2ee软件架构/test/NettyTest/src/com/nari/sun/netty/NettyClient.java" title="NettyClient.java" tooltip="NettyTest/src/com/nari/sun/netty/NettyClient.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NettyTest/src/com/nari/sun/netty/NettyClient.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1046" selectionTopPixel="0"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ClientMoreMain.java" partName="ClientMoreMain.java" path="E:/Java资料/javaweb/j2ee软件架构/test/NettyTest/src/com/nari/sun/netty/ClientMoreMain.java" title="ClientMoreMain.java" tooltip="NettyTest/src/com/nari/sun/netty/ClientMoreMain.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NettyTest/src/com/nari/sun/netty/ClientMoreMain.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="75" selectionTopPixel="0"/>
-</editor>
-<editor id="net.sf.jadclipse.JadclipseClassFileEditor" name="ChannelInitializer.class" partName="ChannelInitializer.class" title="ChannelInitializer.class" tooltip="io.netty.channel.ChannelInitializer" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" org.eclipse.jdt.ui.ClassFileIdentifier="=NettyTest/\/NettyBookSource\/lib\/netty-all-5.0.0.Alpha1.jar&lt;io.netty.channel(ChannelInitializer.class"/>
-<editorState selectionHorizontalPixel="0" selectionLength="18" selectionOffset="645" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ClientHandler.java" partName="ClientHandler.java" path="E:/Java资料/javaweb/j2ee软件架构/test/NettyTest/src/com/nari/sun/netty/ClientHandler.java" title="ClientHandler.java" tooltip="NettyTest/src/com/nari/sun/netty/ClientHandler.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NettyTest/src/com/nari/sun/netty/ClientHandler.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="13" selectionOffset="240" selectionTopPixel="339"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LengthFieldBasedFrameDecoder.java" partName="LengthFieldBasedFrameDecoder.java" path="E:/Java资料/netty/Netty权威指南-源代码/NettyBookSource/lib/netty-all-5.0.0.Alpha1-sources/io/netty/handler/codec/LengthFieldBasedFrameDecoder.java" title="LengthFieldBasedFrameDecoder.java" tooltip="NettyBookSource/lib/netty-all-5.0.0.Alpha1-sources/io/netty/handler/codec/LengthFieldBasedFrameDecoder.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NettyBookSource/lib/netty-all-5.0.0.Alpha1-sources/io/netty/handler/codec/LengthFieldBasedFrameDecoder.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="74" selectionOffset="918" selectionTopPixel="1173"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SubReqClient.java" partName="SubReqClient.java" path="E:/Java资料/javaweb/j2ee软件架构/test/NettyTest/src/proto/SubReqClient.java" title="SubReqClient.java" tooltip="NettyTest/src/proto/SubReqClient.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NettyTest/src/proto/SubReqClient.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="9" selectionOffset="961" selectionTopPixel="69"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TestHandler.java" partName="TestHandler.java" path="E:/Java资料/javaweb/j2ee软件架构/test/NettyTest/src/com/nari/sun/netty/TestHandler.java" title="TestHandler.java" tooltip="NettyTest/src/com/nari/sun/netty/TestHandler.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NettyTest/src/com/nari/sun/netty/TestHandler.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1258" selectionTopPixel="276"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SubScribeReq1.java" partName="SubScribeReq1.java" path="E:/Java资料/javaweb/j2ee软件架构/test/NettyTest/src/proto/SubScribeReq1.java" title="SubScribeReq1.java" tooltip="NettyTest/src/proto/SubScribeReq1.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NettyTest/src/proto/SubScribeReq1.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="29044" selectionTopPixel="20119"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SubScribeResp.java" partName="SubScribeResp.java" path="E:/Java资料/javaweb/j2ee软件架构/test/NettyTest/src/proto/SubScribeResp.java" title="SubScribeResp.java" tooltip="NettyTest/src/proto/SubScribeResp.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NettyTest/src/proto/SubScribeResp.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="23270" selectionOffset="1574" selectionTopPixel="11540"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SubReqServer.java" partName="SubReqServer.java" path="E:/Java资料/javaweb/j2ee软件架构/test/NettyTest/src/proto/SubReqServer.java" title="SubReqServer.java" tooltip="NettyTest/src/proto/SubReqServer.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NettyTest/src/proto/SubReqServer.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1655" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SubReqHandler.java" partName="SubReqHandler.java" path="E:/Java资料/javaweb/j2ee软件架构/test/NettyTest/src/proto/SubReqHandler.java" title="SubReqHandler.java" tooltip="NettyTest/src/proto/SubReqHandler.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NettyTest/src/proto/SubReqHandler.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="285" selectionTopPixel="46"/>
 </editor>
 </editors>
 <views>
@@ -136,8 +116,7 @@
 <view id="com.genuitec.eclipse.ast.deploy.core.serverview" partName="Servers"/>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Warnings"/>
+<expanded>&#x0A;<category IMemento.internal.id="Warnings"/>
 <category IMemento.internal.id="Errors"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="0" org.eclipse.ui.ide.markerType="0" org.eclipse.ui.ide.pathField="0" org.eclipse.ui.ide.resourceField="0" org.eclipse.ui.ide.severityAndDescriptionField="0"/>
@@ -480,8 +459,8 @@
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.23363017" ratioLeft="446" ratioRight="1463" relationship="2" relative="left"/>
-<info folder="true" part="bottom" ratio="0.7483871" ratioLeft="696" ratioRight="234" relationship="4" relative="org.eclipse.ui.editorss">
+<info part="org.eclipse.ui.editorss" ratio="0.15424354" ratioLeft="209" ratioRight="1146" relationship="2" relative="left"/>
+<info folder="true" part="bottom" ratio="0.8896321" ratioLeft="532" ratioRight="66" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
@@ -533,60 +512,17 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NettyTest/src/com/nari/sun/netty/ClientHandler.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NettyBookSource/src/com/phei/netty/nio/TimeClientHandle.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NettyTest/src/com/nari/sun/netty/TestHandler.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NettyTest/src/com/nari/sun/netty/MyDecoder.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Test/src/Inherit.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NettyTest/src/com/nari/sun/netty/NettyServer.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NettyTest/src/com/nari/sun/netty/main/NettyClient.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NettyTest/src/com/nari/sun/netty/handler/HeartBeatReqHandler.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NettyBookSource/lib/netty-all-5.0.0.Alpha1-sources/io/netty/handler/codec/LengthFieldBasedFrameDecoder.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NettyTest/src/proto/SubReqClient.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NettyTest/src/proto/SubScribeReq1.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NettyTest/src/proto/SubScribeResp.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NettyTest/src/proto/SubReqServer.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NettyTest/src/proto/SubReqHandler.java"/>
 </editors>
-<item historyLabel="TestHandler.java" index="5">
-<position info="not_deleted" x="907" y="0"/>
-</item>
-<item historyLabel="MyDecoder.java" index="6">
-<position info="not_deleted" x="597" y="0"/>
-</item>
-<item historyLabel="NettyServer.java" index="0">
-<position info="not_deleted" x="1633" y="0"/>
-</item>
-<item historyLabel="NettyClient.java" index="1">
-<position info="not_deleted" x="103" y="0"/>
-</item>
-<item historyLabel="ClientMoreMain.java" index="2">
-<position info="not_deleted" x="117" y="0"/>
-</item>
-<item historyLabel="NettyServer.java" index="0">
-<position info="not_deleted" x="1368" y="0"/>
-</item>
-<item historyLabel="ClientMoreMain.java" index="2">
-<position info="not_deleted" x="148" y="0"/>
-</item>
-<item historyLabel="NettyServer.java" index="0">
-<position info="not_deleted" x="1368" y="0"/>
-</item>
-<item historyLabel="TimeClientHandle.java" index="4">
-<position info="not_deleted" x="1530" y="0"/>
-</item>
-<item historyLabel="TestHandler.java" index="5">
-<position info="not_deleted" x="973" y="0"/>
-</item>
-<item historyLabel="NettyServer.java" index="0">
-<position info="not_deleted" x="2088" y="0"/>
-</item>
-<item historyLabel="NettyClient.java" index="1">
-<position info="not_deleted" x="183" y="0"/>
-</item>
-<item historyLabel="NettyServer.java" index="0">
-<position info="not_deleted" x="1944" y="0"/>
-</item>
-<item historyLabel="NettyClient.java" index="1">
-<position info="not_deleted" x="103" y="0"/>
-</item>
-<item historyLabel="NettyServer.java" index="0">
-<position info="not_deleted" x="2101" y="0"/>
-</item>
-<item historyLabel="NettyClient.java" index="1">
-<position info="not_deleted" x="103" y="0"/>
-</item>
-<item historyLabel="ClientMoreMain.java" index="2">
-<position info="not_deleted" x="198" y="0"/>
-</item>
 <item historyLabel="TimeClientHandle.java" index="4">
 <position info="not_deleted" x="1530" y="0"/>
 </item>
@@ -614,13 +550,13 @@
 <item historyLabel="TestHandler.java" index="5">
 <position/>
 </item>
-<item historyLabel="Inherit.java" index="7">
+<item historyLabel="Inherit.java" index="6">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Inherit.java" index="7">
+<item historyLabel="Inherit.java" index="6">
 <position info="not_deleted" x="5373" y="0"/>
 </item>
-<item historyLabel="Inherit.java" index="7">
+<item historyLabel="Inherit.java" index="6">
 <position info="not_deleted" x="5179" y="0"/>
 </item>
 <item historyLabel="NettyClient.java" index="1">
@@ -683,8 +619,59 @@
 <item historyLabel="ClientMoreMain.java" index="2">
 <position info="not_deleted" x="344" y="0"/>
 </item>
-<item active="true" historyLabel="ClientMoreMain.java" index="2">
-<position info="not_deleted" x="194" y="0"/>
+<item historyLabel="ClientMoreMain.java" index="2">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="NettyServer.java" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="NettyClient.java" index="8">
+<position info="not_deleted" x="1326" y="0"/>
+</item>
+<item historyLabel="HeartBeatReqHandler.java" index="9">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="HeartBeatReqHandler.java" index="9">
+<position info="not_deleted" x="896" y="0"/>
+</item>
+<item historyLabel="HeartBeatReqHandler.java" index="9">
+<position info="not_deleted" x="854" y="0"/>
+</item>
+<item historyLabel="HeartBeatReqHandler.java" index="9">
+<position info="not_deleted" x="1529" y="0"/>
+</item>
+<item historyLabel="LengthFieldBasedFrameDecoder.java" index="10">
+<position info="not_deleted" x="3" y="0"/>
+</item>
+<item historyLabel="LengthFieldBasedFrameDecoder.java" index="10">
+<position info="not_deleted" x="15363" y="6"/>
+</item>
+<item historyLabel="LengthFieldBasedFrameDecoder.java" index="10">
+<position info="not_deleted" x="15472" y="0"/>
+</item>
+<item historyLabel="LengthFieldBasedFrameDecoder.java" index="10">
+<position info="not_deleted" x="16023" y="6"/>
+</item>
+<item historyLabel="LengthFieldBasedFrameDecoder.java" index="10">
+<position info="not_deleted" x="918" y="74"/>
+</item>
+<item historyLabel="SubReqClient.java" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="SubScribeReq1.java" index="12">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="SubScribeResp.java" index="13">
+<position info="not_deleted" x="1574" y="23270"/>
+</item>
+<item historyLabel="SubReqServer.java" index="14">
+<position info="not_deleted" x="1655" y="0"/>
+</item>
+<item historyLabel="SubReqHandler.java" index="15">
+<position info="not_deleted" x="285" y="0"/>
+</item>
+<item active="true" historyLabel="SubScribeReq1.java" index="12">
+<position info="not_deleted" x="126" y="13"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -692,14 +679,6 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="left"/>
-</trimArea>
-<trimArea IMemento.internal.id="131072">
-<trimItem IMemento.internal.id="org.eclipse.ui.editorss"/>
-<trimItem IMemento.internal.id="right"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@95aad3"/>
-</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -711,6 +690,30 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SubReqHandler.java" tooltip="NettyTest/src/proto/SubReqHandler.java">
+<persistable path="/NettyTest/src/proto/SubReqHandler.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SubReqServer.java" tooltip="NettyTest/src/proto/SubReqServer.java">
+<persistable path="/NettyTest/src/proto/SubReqServer.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SubScribeResp.java" tooltip="NettyTest/src/proto/SubScribeResp.java">
+<persistable path="/NettyTest/src/proto/SubScribeResp.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SubScribeReq1.java" tooltip="NettyTest/src/proto/SubScribeReq1.java">
+<persistable path="/NettyTest/src/proto/SubScribeReq1.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SubReqClient.java" tooltip="NettyTest/src/proto/SubReqClient.java">
+<persistable path="/NettyTest/src/proto/SubReqClient.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LengthFieldBasedFrameDecoder.java" tooltip="NettyBookSource/lib/netty-all-5.0.0.Alpha1-sources/io/netty/handler/codec/LengthFieldBasedFrameDecoder.java">
+<persistable path="/NettyBookSource/lib/netty-all-5.0.0.Alpha1-sources/io/netty/handler/codec/LengthFieldBasedFrameDecoder.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HeartBeatReqHandler.java" tooltip="NettyTest/src/com/nari/sun/netty/handler/HeartBeatReqHandler.java">
+<persistable path="/NettyTest/src/com/nari/sun/netty/handler/HeartBeatReqHandler.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NettyClient.java" tooltip="NettyTest/src/com/nari/sun/netty/main/NettyClient.java">
+<persistable path="/NettyTest/src/com/nari/sun/netty/main/NettyClient.java"/>
+</file>
 <file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="net.sf.jadclipse.JadclipseClassFileEditor" name="LineBasedFrameDecoder.class" tooltip="io.netty.handler.codec.LineBasedFrameDecoder">
 <persistable org.eclipse.jdt.ui.ClassFileIdentifier="=NettyTest/\/NettyBookSource\/lib\/netty-all-5.0.0.Alpha1.jar&lt;io.netty.handler.codec(LineBasedFrameDecoder.class"/>
 </file>
@@ -723,9 +726,6 @@
 <file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="net.sf.jadclipse.JadclipseClassFileEditor" name="FutureTask.class" tooltip="java.util.concurrent.FutureTask">
 <persistable org.eclipse.jdt.ui.ClassFileIdentifier="=Awt/C:\/Program Files\/Java\/jdk1.7.0_80\/jre\/lib\/rt.jar&lt;java.util.concurrent(FutureTask.class"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SubReqClient.java" tooltip="NettyTest/src/proto/SubReqClient.java">
-<persistable path="/NettyTest/src/proto/SubReqClient.java"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SubReqClientHandler.java" tooltip="NettyTest/src/proto/SubReqClientHandler.java">
 <persistable path="/NettyTest/src/proto/SubReqClientHandler.java"/>
 </file>
@@ -734,27 +734,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ClientHandler.java" tooltip="NettyTest/src/com/nari/sun/netty/ClientHandler.java">
 <persistable path="/NettyTest/src/com/nari/sun/netty/ClientHandler.java"/>
-</file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="net.sf.jadclipse.JadclipseClassFileEditor" name="ChannelInitializer.class" tooltip="io.netty.channel.ChannelInitializer">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=NettyTest/\/NettyBookSource\/lib\/netty-all-5.0.0.Alpha1.jar&lt;io.netty.channel(ChannelInitializer.class"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ClientMoreMain.java" tooltip="NettyTest/src/com/nari/sun/netty/ClientMoreMain.java">
-<persistable path="/NettyTest/src/com/nari/sun/netty/ClientMoreMain.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NettyClient.java" tooltip="NettyTest/src/com/nari/sun/netty/NettyClient.java">
-<persistable path="/NettyTest/src/com/nari/sun/netty/NettyClient.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ByteToMessageDecoder.java" tooltip="NettyBookSource/lib/netty-all-5.0.0.Alpha1-sources/io/netty/handler/codec/ByteToMessageDecoder.java">
-<persistable path="/NettyBookSource/lib/netty-all-5.0.0.Alpha1-sources/io/netty/handler/codec/ByteToMessageDecoder.java"/>
-</file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="net.sf.jadclipse.JadclipseClassFileEditor" name="ByteToMessageDecoder.class" tooltip="io.netty.handler.codec.ByteToMessageDecoder">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=NettyTest/\/NettyBookSource\/lib\/netty-all-5.0.0.Alpha1.jar&lt;io.netty.handler.codec(ByteToMessageDecoder.class"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ReferenceCounted.java" tooltip="NettyBookSource/lib/netty-all-5.0.0.Alpha1-sources/io/netty/util/ReferenceCounted.java">
-<persistable path="/NettyBookSource/lib/netty-all-5.0.0.Alpha1-sources/io/netty/util/ReferenceCounted.java"/>
-</file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="net.sf.jadclipse.JadclipseClassFileEditor" name="AbstractReferenceCountedByteBuf.class" tooltip="io.netty.buffer.AbstractReferenceCountedByteBuf">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=NettyTest/\/NettyBookSource\/lib\/netty-all-5.0.0.Alpha1.jar&lt;io.netty.buffer(AbstractReferenceCountedByteBuf.class"/>
 </file>
 </mruList>
 </workbench>

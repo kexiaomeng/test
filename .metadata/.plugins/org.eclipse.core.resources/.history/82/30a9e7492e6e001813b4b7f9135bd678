@@ -1,0 +1,21 @@
+package com.nari.sun.codec;
+
+import java.io.IOException;
+
+import org.jboss.marshalling.Marshaller;
+import org.jboss.marshalling.MarshallerFactory;
+
+import io.netty.buffer.ByteBuf;
+
+public class MarshallingEncoder {
+	
+	private final static byte[] LENGTHHOLDER = new byte[4];
+	private Marshaller marshaller;
+	
+	public MarshallingEncoder() throws IOException{
+		marshaller = MarshallingCodeCFactory.buildMarshalling();
+	}
+	public void encoder(Object obj,ByteBuf buf){
+		
+	}
+}

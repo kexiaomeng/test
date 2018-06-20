@@ -1,4 +1,5 @@
-#Fri Jun 01 17:39:27 CST 2018
+#Wed Jun 13 14:48:59 CST 2018
+DEBUG.consoleOpenOnErr=false
 org.eclipse.debug.ui.PREF_LAUNCH_PERSPECTIVES=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<launchPerspectives/>\r\n
 DEBUG.consoleOpenOnOut=false
 pref_state_memento.org.eclipse.debug.ui.VariableView=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<VariablesViewMemento org.eclipse.debug.ui.SASH_DETAILS_PART\="317" org.eclipse.debug.ui.SASH_VIEW_PART\="682">\r\n<PRESENTATION_CONTEXT_PROPERTIES IMemento.internal.id\="org.eclipse.debug.ui.VariableView"/>\r\n</VariablesViewMemento>

@@ -1,0 +1,26 @@
+package com.nari.sun.codec;
+
+import java.nio.ByteOrder;
+import java.util.List;
+
+import io.netty.buffer.ByteBuf;
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.handler.codec.ByteToMessageDecoder;
+import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
+import io.netty.handler.codec.MessageToMessageDecoder;
+
+public class NettyMessageDecoder extends LengthFieldBasedFrameDecoder{
+	
+	public NettyMessageDecoder(int maxFrameLength,
+			int lengthFieldOffset,int lengthFileldLength) {
+		super(maxFrameLength, lengthFieldOffset,lengthFileldLength);
+		// TODO Auto-generated constructor stub
+	}
+
+	private MarshallingDecoder marshallingDecoder;
+	
+	
+
+	
+
+}

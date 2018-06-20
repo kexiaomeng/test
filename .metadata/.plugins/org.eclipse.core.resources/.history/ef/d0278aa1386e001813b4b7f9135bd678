@@ -1,0 +1,62 @@
+package com.nari.sun.netty.handler;
+
+import sun.org.mozilla.javascript.internal.Token.CommentType;
+
+import com.nari.sun.netty.obj.CommType;
+import com.nari.sun.netty.obj.Header;
+import com.nari.sun.netty.obj.NettyMessage;
+
+import io.netty.channel.ChannelHandlerAdapter;
+import io.netty.channel.ChannelHandlerContext;
+/**
+ * 服务端响应握手认证
+ * @author lenovo
+ *
+ */
+public class LoginAuthRespHandler extends ChannelHandlerAdapter{
+	
+	@Override
+	 public void channelActive(ChannelHandlerContext ctx)throws Exception{
+    	buildLoginReq(ctx);
+	}
+	@Override
+	public void channelRead(ChannelHandlerContext ctx,Object obj)throws Exception{
+    	NettyMessage msg = (NettyMessage)obj;
+    	Header header = msg.getHeader();
+    	
+    	if(header != null && header.getType() == (byte)CommType.TYPE_4.getId()){
+    		byte loginResult = (Byte)msg.getBody();
+    		if(loginResult != (byte)0){
+    			System.out.println("握手失败，断开连接");
+    			ctx.close();
+    		}else {
+				System.out.println("连接成功");
+				ctx.fireChannelRead(obj);
+			}
+    	}else{
+    		ctx.fireChannelRead(obj);
+    	}
+	}
+	@Override 
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause)
+        throws Exception{
+        ctx.fireExceptionCaught(cause);
+    }
+	
+	/**
+	 * 创建握手信息
+	 * @param ctx
+	 * @return
+	 */
+	private NettyMessage buildLoginReq(ChannelHandlerContext ctx) {
+		// TODO Auto-generated method stub
+		NettyMessage msg = new NettyMessage();
+		
+		Header header = new Header();
+		
+		header.setType((byte)CommType.TYPE_3.getId());
+		msg.setHeader(header);
+		return msg;
+	}
+	
+}

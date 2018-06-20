@@ -1,0 +1,22 @@
+package com.nari.sun.codec;
+
+import java.util.List;
+
+import io.netty.buffer.ByteBuf;
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.handler.codec.ByteToMessageDecoder;
+import io.netty.handler.codec.MessageToMessageDecoder;
+
+public class NettyMessageDecoder extends MessageToMessageDecoder{
+	
+	private Marshalling
+	@Override
+	protected void decode(ChannelHandlerContext arg0, Object arg1, List arg2)
+			throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+
+}
