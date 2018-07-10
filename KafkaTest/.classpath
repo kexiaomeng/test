@@ -13,5 +13,6 @@
 	<classpathentry kind="lib" path="E:/Java/myeclipse/library/kafka-wu-library/slf4j-log4j12-1.5.8.jar"/>
 	<classpathentry kind="lib" path="E:/Java/myeclipse/library/kafka-wu-library/zkcluster.jar"/>
 	<classpathentry kind="lib" path="E:/Java/myeclipse/library/log-library/log4j.jar"/>
+	<classpathentry kind="lib" path="/NettyBookSource/lib/protobuf-java-2.5.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

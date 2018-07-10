@@ -1,0 +1,13 @@
+package com.nari.sun.eventListen;
+
+
+
+import com.nari.sun.eventListen.iface.EventListen;
+import com.nari.sun.eventListen.sonClass.SimpleEventListen;
+
+public class Test {
+	
+	
+	SimpleEventListen s = new SimpleEventListen();
+	s.start();
+}

@@ -1,0 +1,27 @@
+package kafkaListen.process;
+
+import kafka.consumer.ConsumerIterator;
+import kafkaListen.interFace.IListener;
+
+public class MsgProcess implements Runnable{
+
+	private ConsumerIterator<byte[], byte[]> stream;
+	private IListener<?> listener;
+	
+	public MsgProcess(ConsumerIterator<byte[], byte[]> stream, IListener<?> listener){
+		this.stream   = stream;
+		this.listener = listener;
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		while(true){
+			byte[] msg = stream.next().message();
+			listener.msgHandler(msg);
+		}
+	}
+	
+	
+	
+}

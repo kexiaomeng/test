@@ -1,0 +1,20 @@
+package com.nari.sun.eventListen;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class EventSource {
+	
+	private EventType type;
+	private final Map<String, Object> attributes = new HashMap<String, Object>();
+
+
+	public EventSource(EventType type){
+		this.type = type;
+		
+	}
+	
+	public Map<String, Object> getAttributes() {
+		return attributes;
+	} 
+}

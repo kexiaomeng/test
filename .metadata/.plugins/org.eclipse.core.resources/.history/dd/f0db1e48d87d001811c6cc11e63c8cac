@@ -1,0 +1,5 @@
+package com.nari.sun.eventListen.iface;
+
+public class Handler {
+
+}

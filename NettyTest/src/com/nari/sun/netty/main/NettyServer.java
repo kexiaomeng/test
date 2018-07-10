@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 import com.nari.sun.netty.codec.NettyMessageDecoder;
 import com.nari.sun.netty.codec.NettyMessageEncoder;
+import com.nari.sun.netty.handler.FrontTaskHandler;
 import com.nari.sun.netty.handler.HeartBeatRespHandler;
 import com.nari.sun.netty.handler.LoginAuthReqHandler;
 import com.nari.sun.netty.handler.LoginAuthRespHandler;
@@ -53,6 +54,7 @@ public class NettyServer {
 					arg0.pipeline().addLast("messageEncoder",new NettyMessageEncoder());
 					arg0.pipeline().addLast("loginAUTH",new LoginAuthRespHandler());
 					arg0.pipeline().addLast("heartBeat",new HeartBeatRespHandler());
+					arg0.pipeline().addLast("taskHandler",new FrontTaskHandler());
 									}
 			});
 		

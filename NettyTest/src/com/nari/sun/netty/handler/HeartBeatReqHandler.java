@@ -63,7 +63,7 @@ public class HeartBeatReqHandler extends ChannelHandlerAdapter{
 		private NettyMessage buildHeartBeat() {
 			NettyMessage msg = new NettyMessage();
 			Header header = new Header();
-			header.setType((byte)CommType.TYPE_5.getId());
+			header.setType((byte)CommType.TYPE_1.getId());
 			msg.setHeader(header);
 			return msg;
 		}

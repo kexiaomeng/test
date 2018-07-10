@@ -9,6 +9,8 @@ import kafka.producer.ProducerConfig;
 import kafka.javaapi.producer.Producer;
 import kafka.producer.KeyedMessage;
 import kafka.producer.ProducerConfig;
+import kafkaListen.object.Archives;
+import kafkaListen.util.SerialUtil;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -18,20 +20,28 @@ import java.io.Serializable;
 import java.util.*;
 
 
+
+
 public class Producter {
 	private Producer<String, byte[]> inner;
+//	private Producer<String,String> inner;
+
     public Producter() throws Exception{
         Properties properties = new Properties();
         properties.load(new FileInputStream(new File(System.getProperty("user.dir")+File.separator+"src"+File.separator+"KafkaProducer.properties")));
 
-        //¸ù¾İKfkaProducer.properties¼ÓÔØÅäÖÃĞÅÏ¢
+        //ï¿½ï¿½ï¿½KfkaProducer.propertiesï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
         ProducerConfig config = new ProducerConfig(properties);
         //ProducerConfig config = new ProducerConfig(properties);
         inner = new Producer<String, byte[]>(config);
-        System.out.println("³õÊ¼»¯³É¹¦");
+//        inner = new Producer<String, String>(config);
+
+        System.out.println("ç”Ÿäº§è€…å¯åŠ¨");
     }
-    //Ò»ÌõÒ»Ìõ·¢ËÍ
+    //Ò»ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public void send(String topicName, byte[] message) {
+//    public void send(String topicName, String message) {
+
         if(topicName == null || message == null){
             return;
         }
@@ -39,21 +49,21 @@ public class Producter {
 //        KeyedMessage<String, String> km = new KeyedMessage<String, String>(topicName,message);
         inner.send(km);
     }
-    //ÅúÁ¿·¢ËÍ
-    public void send(String topicName, Collection<byte[]> messages) {
-        if(topicName == null || messages == null){
-            return;
-        }
-        if(messages.isEmpty()){
-            return;
-        }
-        ArrayList<KeyedMessage<String, byte[]>> kms = new ArrayList<KeyedMessage<String, byte[]>>();
-        for(byte[] entry : messages){
-            KeyedMessage<String,  byte[]> km = new KeyedMessage<String,  byte[]>(topicName,entry);
-            kms.add(km);
-        }
-        inner.send(kms);
-    }
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//    public void send(String topicName, Collection<byte[]> messages) {
+//        if(topicName == null || messages == null){
+//            return;
+//        }
+//        if(messages.isEmpty()){
+//            return;
+//        }
+//        ArrayList<KeyedMessage<String, byte[]>> kms = new ArrayList<KeyedMessage<String, byte[]>>();
+//        for(byte[] entry : messages){
+//            KeyedMessage<String,  byte[]> km = new KeyedMessage<String,  byte[]>(topicName,entry);
+//            kms.add(km);
+//        }
+//        inner.send(kms);
+//    }
     public void close(){
         inner.close();
     }
@@ -66,8 +76,8 @@ public class Producter {
             int i=0;
             while(i<10){
                 StringBuffer sbMsg = new StringBuffer();
-                sbMsg.append("ÎÒ¾ÍÊÇÏë¸øÄã·¢ÏûÏ¢°¡¹ş¹ş¹ş ÉµÁË°É");
-               // String s = new String("1111".getBytes(),"utf-8");
+                sbMsg.append("helloworld");
+                String s1 = new String("1111".getBytes(),"utf-8");
                 Student s = new Student();
                 s.setAge(10);
                 s.setName("sunmeng");
@@ -77,10 +87,26 @@ public class Producter {
                 stream.flush();
                 stream.close();
                 
+                sunTest.SunTest.Builder sun = sunTest.SunTest.newBuilder();
+        		
+        		sun.setEmail("sm");
+        		sun.setId(1);
+        		sun.setName("sunm");
+        		sunTest.SunTest test = sun.build();
+        		ByteArrayOutputStream out = new ByteArrayOutputStream();
+        		test.writeTo(out);
                 
-                byte [] ser = bos.toByteArray();
-                //ÒÔKV¶ÔµÄĞÎÊ½·¢ËÍ
-                producer.send("WebDataAsk", ser);
+                
+                byte [] ser = out.toByteArray();
+                //ï¿½ï¿½KVï¿½Ôµï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½
+                
+                Archives archives = new Archives();
+                List<String> list = new ArrayList<String>();
+                list.add("test");
+                archives.setList(list);
+                archives.setOptType((byte)1);
+                archives.setTerminalAddr("testListen");
+                producer.send("test", SerialUtil.getBytes(archives));
                 i++;
             }
             
@@ -105,36 +131,36 @@ public class Producter {
 //    public void init(){
 //        Properties props = new Properties();
 //        /**
-//         * ÓÃÓÚ×Ô¾Ù£¨bootstrapping £©£¬producerÖ»ÊÇÓÃËüÀ´»ñµÃÔªÊı¾İ£¨topic, partition, replicas£©
-//         * Êµ¼ÊÓÃ»§·¢ËÍÏûÏ¢µÄsocket»á¸ù¾İ·µ»ØµÄÔªÊı¾İÀ´È·¶¨
+//         * ï¿½ï¿½ï¿½ï¿½ï¿½Ô¾Ù£ï¿½bootstrapping ï¿½ï¿½ï¿½ï¿½producerÖ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½İ£ï¿½topic, partition, replicasï¿½ï¿½
+//         * Êµï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½socketï¿½ï¿½ï¿½İ·ï¿½ï¿½Øµï¿½Ôªï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½
 //         */
 //        props.put("metadata.broker.list", "192.168.245.131:9093");
 //        /**
-//         * ÏûÏ¢µÄĞòÁĞ»¯Àà
-//         * Ä¬ÈÏÊÇ kafka.serializer.DefaultEncoder£¬ ÊäÈëÊ± byte[] ·µ»ØÊÇÍ¬ÑùµÄ×Ö½ÚÊı×é
+//         * ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½Ğ»ï¿½ï¿½ï¿½
+//         * Ä¬ï¿½ï¿½ï¿½ï¿½ kafka.serializer.DefaultEncoderï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ê± byte[] ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½
 //         */
 //        props.put("serializer.class", "kafka.serializer.StringEncoder");
 //        /**
-//         * producer·¢ËÍÏûÏ¢ºóÊÇ·ñµÈ´ıbrokerµÄACK£¬Ä¬ÈÏÊÇ0
-//         * 1 ±íÊ¾µÈ´ıACK£¬±£Ö¤ÏûÏ¢µÄ¿É¿¿ĞÔ
+//         * producerï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½Ç·ï¿½È´ï¿½brokerï¿½ï¿½ACKï¿½ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½0
+//         * 1 ï¿½ï¿½Ê¾ï¿½È´ï¿½ACKï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½Ï¢ï¿½Ä¿É¿ï¿½ï¿½ï¿½
 //         */
 //        props.put("request.required.acks", "1");
 //        ProducerConfig config = new ProducerConfig(props);
-//        // ·ºĞÍ²ÎÊı·Ö±ğ±íÊ¾ The first is the type of the Partition key, the second the type of the message
+//        // ï¿½ï¿½ï¿½Í²ï¿½ï¿½ï¿½Ö±ï¿½ï¿½Ê¾ The first is the type of the Partition key, the second the type of the message
 //        producer = new Producer<String, String>(config);
 //    }
 //
 //    public void produceMsg(){
-//        // ¹¹½¨·¢ËÍµÄÏûÏ¢
+//        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½Ï¢
 //        long timestamp = System.currentTimeMillis();
 //        String msg = "Msg" + timestamp;
-//        String topic = "DBSERVICE";  // È·±£ÓĞÕâ¸ötopic
-//        System.out.println("·¢ËÍÏûÏ¢" + msg);
+//        String topic = "DBSERVICE";  // È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½topic
+//        System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢" + msg);
 //
 //        /**
-//         * topic: ÏûÏ¢µÄÖ÷Ìâ
-//         * key£ºÏûÏ¢µÄkey£¬Í¬Ê±Ò²»á×÷ÎªpartitionµÄkey
-//         * message:·¢ËÍµÄÏûÏ¢
+//         * topic: ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//         * keyï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½keyï¿½ï¿½Í¬Ê±Ò²ï¿½ï¿½ï¿½ï¿½Îªpartitionï¿½ï¿½key
+//         * message:ï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½Ï¢
 //         */
 //        KeyedMessage<String, String> data = new KeyedMessage<String, String>(topic,msg);
 //
@@ -142,7 +168,7 @@ public class Producter {
 //    }
 //
 //    public void start() {
-//        System.out.println("¿ªÊ¼·¢ËÍÏûÏ¢ ...");
+//        System.out.println("ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ ...");
 //        Executors.newSingleThreadExecutor().execute(new Runnable() {
 //            public void run() {
 //                init();

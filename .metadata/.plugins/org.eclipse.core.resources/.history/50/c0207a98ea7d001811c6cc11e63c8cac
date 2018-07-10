@@ -1,0 +1,12 @@
+package com.nari.sun.eventListen.handler;
+
+import com.nari.sun.eventListen.iface.Handler;
+
+
+public class TestHandler  implements Handler{
+
+	@Override
+	public void action(){
+		System.out.println("handler");
+	}
+}

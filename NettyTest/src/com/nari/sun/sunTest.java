@@ -6,12 +6,18 @@ package com.nari.sun;
 public final class sunTest {
   private sunTest() {}
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+      com.google.protobuf.ExtensionRegistryLite registry) {
   }
-  public interface SunTestOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
 
-    // required int32 id = 1;
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
+  public interface SunTestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:demo.SunTest)
+      com.google.protobuf.MessageOrBuilder {
+
     /**
      * <code>required int32 id = 1;</code>
      */
@@ -21,7 +27,6 @@ public final class sunTest {
      */
     int getId();
 
-    // required string name = 2;
     /**
      * <code>required string name = 2;</code>
      */
@@ -36,7 +41,6 @@ public final class sunTest {
     com.google.protobuf.ByteString
         getNameBytes();
 
-    // optional string email = 3;
     /**
      * <code>optional string email = 3;</code>
      */
@@ -50,40 +54,92 @@ public final class sunTest {
      */
     com.google.protobuf.ByteString
         getEmailBytes();
+
+    /**
+     * <code>repeated string nameTest = 4;</code>
+     */
+    java.util.List<java.lang.String>
+        getNameTestList();
+    /**
+     * <code>repeated string nameTest = 4;</code>
+     */
+    int getNameTestCount();
+    /**
+     * <code>repeated string nameTest = 4;</code>
+     */
+    java.lang.String getNameTest(int index);
+    /**
+     * <code>repeated string nameTest = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameTestBytes(int index);
+
+    /**
+     * <code>map&lt;string, string&gt; mapEn = 5;</code>
+     */
+    int getMapEnCount();
+    /**
+     * <code>map&lt;string, string&gt; mapEn = 5;</code>
+     */
+    boolean containsMapEn(
+        java.lang.String key);
+    /**
+     * Use {@link #getMapEnMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getMapEn();
+    /**
+     * <code>map&lt;string, string&gt; mapEn = 5;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getMapEnMap();
+    /**
+     * <code>map&lt;string, string&gt; mapEn = 5;</code>
+     */
+
+    java.lang.String getMapEnOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; mapEn = 5;</code>
+     */
+
+    java.lang.String getMapEnOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code demo.SunTest}
    */
-  public static final class SunTest extends
-      com.google.protobuf.GeneratedMessage
-      implements SunTestOrBuilder {
+  public  static final class SunTest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:demo.SunTest)
+      SunTestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use SunTest.newBuilder() to construct.
-    private SunTest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    private SunTest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
-      this.unknownFields = builder.getUnknownFields();
     }
-    private SunTest(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final SunTest defaultInstance;
-    public static SunTest getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public SunTest getDefaultInstanceForType() {
-      return defaultInstance;
+    private SunTest() {
+      id_ = 0;
+      name_ = "";
+      email_ = "";
+      nameTest_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private SunTest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -96,8 +152,8 @@ public final class sunTest {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -108,13 +164,37 @@ public final class sunTest {
               break;
             }
             case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              name_ = input.readBytes();
+              name_ = bs;
               break;
             }
             case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              email_ = input.readBytes();
+              email_ = bs;
+              break;
+            }
+            case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                nameTest_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              nameTest_.add(bs);
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                mapEn_ = com.google.protobuf.MapField.newMapField(
+                    MapEnDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000010;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              mapEn__ = input.readMessage(
+                  MapEnDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              mapEn_.getMutableMap().put(
+                  mapEn__.getKey(), mapEn__.getValue());
               break;
             }
           }
@@ -123,8 +203,11 @@ public final class sunTest {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+            e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          nameTest_ = nameTest_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -134,26 +217,22 @@ public final class sunTest {
       return com.nari.sun.sunTest.internal_static_demo_SunTest_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 5:
+          return internalGetMapEn();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.nari.sun.sunTest.internal_static_demo_SunTest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.nari.sun.sunTest.SunTest.class, com.nari.sun.sunTest.SunTest.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<SunTest> PARSER =
-        new com.google.protobuf.AbstractParser<SunTest>() {
-      public SunTest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SunTest(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<SunTest> getParserForType() {
-      return PARSER;
     }
 
     /**
@@ -164,11 +243,11 @@ public final class sunTest {
       /**
        * <code>MAN = 0;</code>
        */
-      MAN(0, 0),
+      MAN(0),
       /**
        * <code>WOMAN = 1;</code>
        */
-      WOMAN(1, 1),
+      WOMAN(1),
       ;
 
       /**
@@ -181,9 +260,19 @@ public final class sunTest {
       public static final int WOMAN_VALUE = 1;
 
 
-      public final int getNumber() { return value; }
+      public final int getNumber() {
+        return value;
+      }
 
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
       public static Sex valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static Sex forNumber(int value) {
         switch (value) {
           case 0: return MAN;
           case 1: return WOMAN;
@@ -195,17 +284,17 @@ public final class sunTest {
           internalGetValueMap() {
         return internalValueMap;
       }
-      private static com.google.protobuf.Internal.EnumLiteMap<Sex>
-          internalValueMap =
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Sex> internalValueMap =
             new com.google.protobuf.Internal.EnumLiteMap<Sex>() {
               public Sex findValueByNumber(int number) {
-                return Sex.valueOf(number);
+                return Sex.forNumber(number);
               }
             };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
-        return getDescriptor().getValues().get(index);
+        return getDescriptor().getValues().get(ordinal());
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptorForType() {
@@ -227,21 +316,19 @@ public final class sunTest {
         return VALUES[desc.getIndex()];
       }
 
-      private final int index;
       private final int value;
 
-      private Sex(int index, int value) {
-        this.index = index;
+      private Sex(int value) {
         this.value = value;
       }
 
       // @@protoc_insertion_point(enum_scope:demo.SunTest.Sex)
     }
 
-    public interface PhoneNumberOrBuilder
-        extends com.google.protobuf.MessageOrBuilder {
+    public interface PhoneNumberOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:demo.SunTest.PhoneNumber)
+        com.google.protobuf.MessageOrBuilder {
 
-      // required string number = 1;
       /**
        * <code>required string number = 1;</code>
        */
@@ -256,7 +343,6 @@ public final class sunTest {
       com.google.protobuf.ByteString
           getNumberBytes();
 
-      // optional .demo.SunTest.Sex sex = 2 [default = MAN];
       /**
        * <code>optional .demo.SunTest.Sex sex = 2 [default = MAN];</code>
        */
@@ -269,36 +355,33 @@ public final class sunTest {
     /**
      * Protobuf type {@code demo.SunTest.PhoneNumber}
      */
-    public static final class PhoneNumber extends
-        com.google.protobuf.GeneratedMessage
-        implements PhoneNumberOrBuilder {
+    public  static final class PhoneNumber extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:demo.SunTest.PhoneNumber)
+        PhoneNumberOrBuilder {
+    private static final long serialVersionUID = 0L;
       // Use PhoneNumber.newBuilder() to construct.
-      private PhoneNumber(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      private PhoneNumber(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
-        this.unknownFields = builder.getUnknownFields();
       }
-      private PhoneNumber(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-      private static final PhoneNumber defaultInstance;
-      public static PhoneNumber getDefaultInstance() {
-        return defaultInstance;
+      private PhoneNumber() {
+        number_ = "";
+        sex_ = 0;
       }
 
-      public PhoneNumber getDefaultInstanceForType() {
-        return defaultInstance;
-      }
-
-      private final com.google.protobuf.UnknownFieldSet unknownFields;
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet
-          getUnknownFields() {
+      getUnknownFields() {
         return this.unknownFields;
       }
       private PhoneNumber(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        initFields();
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -311,15 +394,16 @@ public final class sunTest {
                 done = true;
                 break;
               default: {
-                if (!parseUnknownField(input, unknownFields,
-                                       extensionRegistry, tag)) {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
               }
               case 10: {
+                com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000001;
-                number_ = input.readBytes();
+                number_ = bs;
                 break;
               }
               case 16: {
@@ -329,7 +413,7 @@ public final class sunTest {
                   unknownFields.mergeVarintField(2, rawValue);
                 } else {
                   bitField0_ |= 0x00000002;
-                  sex_ = value;
+                  sex_ = rawValue;
                 }
                 break;
               }
@@ -339,7 +423,7 @@ public final class sunTest {
           throw e.setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(
-              e.getMessage()).setUnfinishedMessage(this);
+              e).setUnfinishedMessage(this);
         } finally {
           this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
@@ -350,32 +434,16 @@ public final class sunTest {
         return com.nari.sun.sunTest.internal_static_demo_SunTest_PhoneNumber_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.nari.sun.sunTest.internal_static_demo_SunTest_PhoneNumber_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.nari.sun.sunTest.SunTest.PhoneNumber.class, com.nari.sun.sunTest.SunTest.PhoneNumber.Builder.class);
       }
 
-      public static com.google.protobuf.Parser<PhoneNumber> PARSER =
-          new com.google.protobuf.AbstractParser<PhoneNumber>() {
-        public PhoneNumber parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PhoneNumber(input, extensionRegistry);
-        }
-      };
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<PhoneNumber> getParserForType() {
-        return PARSER;
-      }
-
       private int bitField0_;
-      // required string number = 1;
       public static final int NUMBER_FIELD_NUMBER = 1;
-      private java.lang.Object number_;
+      private volatile java.lang.Object number_;
       /**
        * <code>required string number = 1;</code>
        */
@@ -416,9 +484,8 @@ public final class sunTest {
         }
       }
 
-      // optional .demo.SunTest.Sex sex = 2 [default = MAN];
       public static final int SEX_FIELD_NUMBER = 2;
-      private com.nari.sun.sunTest.SunTest.Sex sex_;
+      private int sex_;
       /**
        * <code>optional .demo.SunTest.Sex sex = 2 [default = MAN];</code>
        */
@@ -429,17 +496,15 @@ public final class sunTest {
        * <code>optional .demo.SunTest.Sex sex = 2 [default = MAN];</code>
        */
       public com.nari.sun.sunTest.SunTest.Sex getSex() {
-        return sex_;
+        com.nari.sun.sunTest.SunTest.Sex result = com.nari.sun.sunTest.SunTest.Sex.valueOf(sex_);
+        return result == null ? com.nari.sun.sunTest.SunTest.Sex.MAN : result;
       }
 
-      private void initFields() {
-        number_ = "";
-        sex_ = com.nari.sun.sunTest.SunTest.Sex.MAN;
-      }
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
-        if (isInitialized != -1) return isInitialized == 1;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
 
         if (!hasNumber()) {
           memoizedIsInitialized = 0;
@@ -451,42 +516,87 @@ public final class sunTest {
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        getSerializedSize();
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          output.writeBytes(1, getNumberBytes());
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, number_);
         }
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          output.writeEnum(2, sex_.getNumber());
+          output.writeEnum(2, sex_);
         }
-        getUnknownFields().writeTo(output);
+        unknownFields.writeTo(output);
       }
 
-      private int memoizedSerializedSize = -1;
       public int getSerializedSize() {
-        int size = memoizedSerializedSize;
+        int size = memoizedSize;
         if (size != -1) return size;
 
         size = 0;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeBytesSize(1, getNumberBytes());
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, number_);
         }
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
           size += com.google.protobuf.CodedOutputStream
-            .computeEnumSize(2, sex_.getNumber());
+            .computeEnumSize(2, sex_);
         }
-        size += getUnknownFields().getSerializedSize();
-        memoizedSerializedSize = size;
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
         return size;
       }
 
-      private static final long serialVersionUID = 0L;
       @java.lang.Override
-      protected java.lang.Object writeReplace()
-          throws java.io.ObjectStreamException {
-        return super.writeReplace();
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.nari.sun.sunTest.SunTest.PhoneNumber)) {
+          return super.equals(obj);
+        }
+        com.nari.sun.sunTest.SunTest.PhoneNumber other = (com.nari.sun.sunTest.SunTest.PhoneNumber) obj;
+
+        boolean result = true;
+        result = result && (hasNumber() == other.hasNumber());
+        if (hasNumber()) {
+          result = result && getNumber()
+              .equals(other.getNumber());
+        }
+        result = result && (hasSex() == other.hasSex());
+        if (hasSex()) {
+          result = result && sex_ == other.sex_;
+        }
+        result = result && unknownFields.equals(other.unknownFields);
+        return result;
       }
 
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasNumber()) {
+          hash = (37 * hash) + NUMBER_FIELD_NUMBER;
+          hash = (53 * hash) + getNumber().hashCode();
+        }
+        if (hasSex()) {
+          hash = (37 * hash) + SEX_FIELD_NUMBER;
+          hash = (53 * hash) + sex_;
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.nari.sun.sunTest.SunTest.PhoneNumber parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.nari.sun.sunTest.SunTest.PhoneNumber parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
       public static com.nari.sun.sunTest.SunTest.PhoneNumber parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -510,46 +620,57 @@ public final class sunTest {
       }
       public static com.nari.sun.sunTest.SunTest.PhoneNumber parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return PARSER.parseFrom(input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
       public static com.nari.sun.sunTest.SunTest.PhoneNumber parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return PARSER.parseFrom(input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
       public static com.nari.sun.sunTest.SunTest.PhoneNumber parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return PARSER.parseDelimitedFrom(input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
       }
       public static com.nari.sun.sunTest.SunTest.PhoneNumber parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return PARSER.parseDelimitedFrom(input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
       public static com.nari.sun.sunTest.SunTest.PhoneNumber parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return PARSER.parseFrom(input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
       public static com.nari.sun.sunTest.SunTest.PhoneNumber parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return PARSER.parseFrom(input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
-      public static Builder newBuilder() { return Builder.create(); }
       public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder(com.nari.sun.sunTest.SunTest.PhoneNumber prototype) {
-        return newBuilder().mergeFrom(prototype);
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
       }
-      public Builder toBuilder() { return newBuilder(this); }
+      public static Builder newBuilder(com.nari.sun.sunTest.SunTest.PhoneNumber prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
 
       @java.lang.Override
       protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         Builder builder = new Builder(parent);
         return builder;
       }
@@ -557,14 +678,15 @@ public final class sunTest {
        * Protobuf type {@code demo.SunTest.PhoneNumber}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessage.Builder<Builder>
-         implements com.nari.sun.sunTest.SunTest.PhoneNumberOrBuilder {
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:demo.SunTest.PhoneNumber)
+          com.nari.sun.sunTest.SunTest.PhoneNumberOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
           return com.nari.sun.sunTest.internal_static_demo_SunTest_PhoneNumber_descriptor;
         }
 
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.nari.sun.sunTest.internal_static_demo_SunTest_PhoneNumber_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
@@ -577,29 +699,22 @@ public final class sunTest {
         }
 
         private Builder(
-            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
           maybeForceBuilderInitialization();
         }
         private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
           }
         }
-        private static Builder create() {
-          return new Builder();
-        }
-
         public Builder clear() {
           super.clear();
           number_ = "";
           bitField0_ = (bitField0_ & ~0x00000001);
-          sex_ = com.nari.sun.sunTest.SunTest.Sex.MAN;
+          sex_ = 0;
           bitField0_ = (bitField0_ & ~0x00000002);
           return this;
-        }
-
-        public Builder clone() {
-          return create().mergeFrom(buildPartial());
         }
 
         public com.google.protobuf.Descriptors.Descriptor
@@ -636,6 +751,32 @@ public final class sunTest {
           return result;
         }
 
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.nari.sun.sunTest.SunTest.PhoneNumber) {
             return mergeFrom((com.nari.sun.sunTest.SunTest.PhoneNumber)other);
@@ -655,13 +796,13 @@ public final class sunTest {
           if (other.hasSex()) {
             setSex(other.getSex());
           }
-          this.mergeUnknownFields(other.getUnknownFields());
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
           return this;
         }
 
         public final boolean isInitialized() {
           if (!hasNumber()) {
-            
             return false;
           }
           return true;
@@ -676,7 +817,7 @@ public final class sunTest {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             parsedMessage = (com.nari.sun.sunTest.SunTest.PhoneNumber) e.getUnfinishedMessage();
-            throw e;
+            throw e.unwrapIOException();
           } finally {
             if (parsedMessage != null) {
               mergeFrom(parsedMessage);
@@ -686,7 +827,6 @@ public final class sunTest {
         }
         private int bitField0_;
 
-        // required string number = 1;
         private java.lang.Object number_ = "";
         /**
          * <code>required string number = 1;</code>
@@ -700,9 +840,12 @@ public final class sunTest {
         public java.lang.String getNumber() {
           java.lang.Object ref = number_;
           if (!(ref instanceof java.lang.String)) {
-            java.lang.String s = ((com.google.protobuf.ByteString) ref)
-                .toStringUtf8();
-            number_ = s;
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              number_ = s;
+            }
             return s;
           } else {
             return (java.lang.String) ref;
@@ -760,8 +903,7 @@ public final class sunTest {
           return this;
         }
 
-        // optional .demo.SunTest.Sex sex = 2 [default = MAN];
-        private com.nari.sun.sunTest.SunTest.Sex sex_ = com.nari.sun.sunTest.SunTest.Sex.MAN;
+        private int sex_ = 0;
         /**
          * <code>optional .demo.SunTest.Sex sex = 2 [default = MAN];</code>
          */
@@ -772,7 +914,8 @@ public final class sunTest {
          * <code>optional .demo.SunTest.Sex sex = 2 [default = MAN];</code>
          */
         public com.nari.sun.sunTest.SunTest.Sex getSex() {
-          return sex_;
+          com.nari.sun.sunTest.SunTest.Sex result = com.nari.sun.sunTest.SunTest.Sex.valueOf(sex_);
+          return result == null ? com.nari.sun.sunTest.SunTest.Sex.MAN : result;
         }
         /**
          * <code>optional .demo.SunTest.Sex sex = 2 [default = MAN];</code>
@@ -782,7 +925,7 @@ public final class sunTest {
             throw new NullPointerException();
           }
           bitField0_ |= 0x00000002;
-          sex_ = value;
+          sex_ = value.getNumber();
           onChanged();
           return this;
         }
@@ -791,24 +934,60 @@ public final class sunTest {
          */
         public Builder clearSex() {
           bitField0_ = (bitField0_ & ~0x00000002);
-          sex_ = com.nari.sun.sunTest.SunTest.Sex.MAN;
+          sex_ = 0;
           onChanged();
           return this;
         }
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
 
         // @@protoc_insertion_point(builder_scope:demo.SunTest.PhoneNumber)
       }
 
+      // @@protoc_insertion_point(class_scope:demo.SunTest.PhoneNumber)
+      private static final com.nari.sun.sunTest.SunTest.PhoneNumber DEFAULT_INSTANCE;
       static {
-        defaultInstance = new PhoneNumber(true);
-        defaultInstance.initFields();
+        DEFAULT_INSTANCE = new com.nari.sun.sunTest.SunTest.PhoneNumber();
       }
 
-      // @@protoc_insertion_point(class_scope:demo.SunTest.PhoneNumber)
+      public static com.nari.sun.sunTest.SunTest.PhoneNumber getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      @java.lang.Deprecated public static final com.google.protobuf.Parser<PhoneNumber>
+          PARSER = new com.google.protobuf.AbstractParser<PhoneNumber>() {
+        public PhoneNumber parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new PhoneNumber(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<PhoneNumber> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<PhoneNumber> getParserForType() {
+        return PARSER;
+      }
+
+      public com.nari.sun.sunTest.SunTest.PhoneNumber getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
     }
 
     private int bitField0_;
-    // required int32 id = 1;
     public static final int ID_FIELD_NUMBER = 1;
     private int id_;
     /**
@@ -824,9 +1003,8 @@ public final class sunTest {
       return id_;
     }
 
-    // required string name = 2;
     public static final int NAME_FIELD_NUMBER = 2;
-    private java.lang.Object name_;
+    private volatile java.lang.Object name_;
     /**
      * <code>required string name = 2;</code>
      */
@@ -867,9 +1045,8 @@ public final class sunTest {
       }
     }
 
-    // optional string email = 3;
     public static final int EMAIL_FIELD_NUMBER = 3;
-    private java.lang.Object email_;
+    private volatile java.lang.Object email_;
     /**
      * <code>optional string email = 3;</code>
      */
@@ -910,15 +1087,116 @@ public final class sunTest {
       }
     }
 
-    private void initFields() {
-      id_ = 0;
-      name_ = "";
-      email_ = "";
+    public static final int NAMETEST_FIELD_NUMBER = 4;
+    private com.google.protobuf.LazyStringList nameTest_;
+    /**
+     * <code>repeated string nameTest = 4;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getNameTestList() {
+      return nameTest_;
     }
+    /**
+     * <code>repeated string nameTest = 4;</code>
+     */
+    public int getNameTestCount() {
+      return nameTest_.size();
+    }
+    /**
+     * <code>repeated string nameTest = 4;</code>
+     */
+    public java.lang.String getNameTest(int index) {
+      return nameTest_.get(index);
+    }
+    /**
+     * <code>repeated string nameTest = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameTestBytes(int index) {
+      return nameTest_.getByteString(index);
+    }
+
+    public static final int MAPEN_FIELD_NUMBER = 5;
+    private static final class MapEnDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  com.nari.sun.sunTest.internal_static_demo_SunTest_MapEnEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> mapEn_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetMapEn() {
+      if (mapEn_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            MapEnDefaultEntryHolder.defaultEntry);
+      }
+      return mapEn_;
+    }
+
+    public int getMapEnCount() {
+      return internalGetMapEn().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; mapEn = 5;</code>
+     */
+
+    public boolean containsMapEn(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetMapEn().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getMapEnMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMapEn() {
+      return getMapEnMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; mapEn = 5;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getMapEnMap() {
+      return internalGetMapEn().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; mapEn = 5;</code>
+     */
+
+    public java.lang.String getMapEnOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMapEn().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; mapEn = 5;</code>
+     */
+
+    public java.lang.String getMapEnOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMapEn().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasId()) {
         memoizedIsInitialized = 0;
@@ -934,22 +1212,29 @@ public final class sunTest {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeInt32(1, id_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getNameBytes());
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getEmailBytes());
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, email_);
       }
-      getUnknownFields().writeTo(output);
+      for (int i = 0; i < nameTest_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, nameTest_.getRaw(i));
+      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetMapEn(),
+          MapEnDefaultEntryHolder.defaultEntry,
+          5);
+      unknownFields.writeTo(output);
     }
 
-    private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -958,25 +1243,111 @@ public final class sunTest {
           .computeInt32Size(1, id_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getNameBytes());
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getEmailBytes());
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, email_);
       }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < nameTest_.size(); i++) {
+          dataSize += computeStringSizeNoTag(nameTest_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getNameTestList().size();
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetMapEn().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        mapEn__ = MapEnDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(5, mapEn__);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.nari.sun.sunTest.SunTest)) {
+        return super.equals(obj);
+      }
+      com.nari.sun.sunTest.SunTest other = (com.nari.sun.sunTest.SunTest) obj;
+
+      boolean result = true;
+      result = result && (hasId() == other.hasId());
+      if (hasId()) {
+        result = result && (getId()
+            == other.getId());
+      }
+      result = result && (hasName() == other.hasName());
+      if (hasName()) {
+        result = result && getName()
+            .equals(other.getName());
+      }
+      result = result && (hasEmail() == other.hasEmail());
+      if (hasEmail()) {
+        result = result && getEmail()
+            .equals(other.getEmail());
+      }
+      result = result && getNameTestList()
+          .equals(other.getNameTestList());
+      result = result && internalGetMapEn().equals(
+          other.internalGetMapEn());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasId()) {
+        hash = (37 * hash) + ID_FIELD_NUMBER;
+        hash = (53 * hash) + getId();
+      }
+      if (hasName()) {
+        hash = (37 * hash) + NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getName().hashCode();
+      }
+      if (hasEmail()) {
+        hash = (37 * hash) + EMAIL_FIELD_NUMBER;
+        hash = (53 * hash) + getEmail().hashCode();
+      }
+      if (getNameTestCount() > 0) {
+        hash = (37 * hash) + NAMETEST_FIELD_NUMBER;
+        hash = (53 * hash) + getNameTestList().hashCode();
+      }
+      if (!internalGetMapEn().getMap().isEmpty()) {
+        hash = (37 * hash) + MAPEN_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetMapEn().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.nari.sun.sunTest.SunTest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.nari.sun.sunTest.SunTest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static com.nari.sun.sunTest.SunTest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1000,46 +1371,57 @@ public final class sunTest {
     }
     public static com.nari.sun.sunTest.SunTest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static com.nari.sun.sunTest.SunTest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static com.nari.sun.sunTest.SunTest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static com.nari.sun.sunTest.SunTest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static com.nari.sun.sunTest.SunTest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static com.nari.sun.sunTest.SunTest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.nari.sun.sunTest.SunTest prototype) {
-      return newBuilder().mergeFrom(prototype);
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
     }
-    public Builder toBuilder() { return newBuilder(this); }
+    public static Builder newBuilder(com.nari.sun.sunTest.SunTest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -1047,14 +1429,37 @@ public final class sunTest {
      * Protobuf type {@code demo.SunTest}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.nari.sun.sunTest.SunTestOrBuilder {
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:demo.SunTest)
+        com.nari.sun.sunTest.SunTestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return com.nari.sun.sunTest.internal_static_demo_SunTest_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 5:
+            return internalGetMapEn();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 5:
+            return internalGetMutableMapEn();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.nari.sun.sunTest.internal_static_demo_SunTest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -1067,18 +1472,15 @@ public final class sunTest {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
       }
-      private static Builder create() {
-        return new Builder();
-      }
-
       public Builder clear() {
         super.clear();
         id_ = 0;
@@ -1087,11 +1489,10 @@ public final class sunTest {
         bitField0_ = (bitField0_ & ~0x00000002);
         email_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
+        nameTest_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        internalGetMutableMapEn().clear();
         return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
       }
 
       public com.google.protobuf.Descriptors.Descriptor
@@ -1127,11 +1528,44 @@ public final class sunTest {
           to_bitField0_ |= 0x00000004;
         }
         result.email_ = email_;
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          nameTest_ = nameTest_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.nameTest_ = nameTest_;
+        result.mapEn_ = internalGetMapEn();
+        result.mapEn_.makeImmutable();
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.nari.sun.sunTest.SunTest) {
           return mergeFrom((com.nari.sun.sunTest.SunTest)other);
@@ -1156,17 +1590,28 @@ public final class sunTest {
           email_ = other.email_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        if (!other.nameTest_.isEmpty()) {
+          if (nameTest_.isEmpty()) {
+            nameTest_ = other.nameTest_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureNameTestIsMutable();
+            nameTest_.addAll(other.nameTest_);
+          }
+          onChanged();
+        }
+        internalGetMutableMapEn().mergeFrom(
+            other.internalGetMapEn());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
         return this;
       }
 
       public final boolean isInitialized() {
         if (!hasId()) {
-          
           return false;
         }
         if (!hasName()) {
-          
           return false;
         }
         return true;
@@ -1181,7 +1626,7 @@ public final class sunTest {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (com.nari.sun.sunTest.SunTest) e.getUnfinishedMessage();
-          throw e;
+          throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -1191,7 +1636,6 @@ public final class sunTest {
       }
       private int bitField0_;
 
-      // required int32 id = 1;
       private int id_ ;
       /**
        * <code>required int32 id = 1;</code>
@@ -1224,7 +1668,6 @@ public final class sunTest {
         return this;
       }
 
-      // required string name = 2;
       private java.lang.Object name_ = "";
       /**
        * <code>required string name = 2;</code>
@@ -1238,9 +1681,12 @@ public final class sunTest {
       public java.lang.String getName() {
         java.lang.Object ref = name_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          name_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            name_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1298,7 +1744,6 @@ public final class sunTest {
         return this;
       }
 
-      // optional string email = 3;
       private java.lang.Object email_ = "";
       /**
        * <code>optional string email = 3;</code>
@@ -1312,9 +1757,12 @@ public final class sunTest {
       public java.lang.String getEmail() {
         java.lang.Object ref = email_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          email_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            email_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1372,66 +1820,333 @@ public final class sunTest {
         return this;
       }
 
+      private com.google.protobuf.LazyStringList nameTest_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureNameTestIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          nameTest_ = new com.google.protobuf.LazyStringArrayList(nameTest_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+      /**
+       * <code>repeated string nameTest = 4;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getNameTestList() {
+        return nameTest_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string nameTest = 4;</code>
+       */
+      public int getNameTestCount() {
+        return nameTest_.size();
+      }
+      /**
+       * <code>repeated string nameTest = 4;</code>
+       */
+      public java.lang.String getNameTest(int index) {
+        return nameTest_.get(index);
+      }
+      /**
+       * <code>repeated string nameTest = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameTestBytes(int index) {
+        return nameTest_.getByteString(index);
+      }
+      /**
+       * <code>repeated string nameTest = 4;</code>
+       */
+      public Builder setNameTest(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureNameTestIsMutable();
+        nameTest_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string nameTest = 4;</code>
+       */
+      public Builder addNameTest(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureNameTestIsMutable();
+        nameTest_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string nameTest = 4;</code>
+       */
+      public Builder addAllNameTest(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureNameTestIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, nameTest_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string nameTest = 4;</code>
+       */
+      public Builder clearNameTest() {
+        nameTest_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string nameTest = 4;</code>
+       */
+      public Builder addNameTestBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureNameTestIsMutable();
+        nameTest_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> mapEn_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMapEn() {
+        if (mapEn_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              MapEnDefaultEntryHolder.defaultEntry);
+        }
+        return mapEn_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableMapEn() {
+        onChanged();;
+        if (mapEn_ == null) {
+          mapEn_ = com.google.protobuf.MapField.newMapField(
+              MapEnDefaultEntryHolder.defaultEntry);
+        }
+        if (!mapEn_.isMutable()) {
+          mapEn_ = mapEn_.copy();
+        }
+        return mapEn_;
+      }
+
+      public int getMapEnCount() {
+        return internalGetMapEn().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, string&gt; mapEn = 5;</code>
+       */
+
+      public boolean containsMapEn(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetMapEn().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getMapEnMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getMapEn() {
+        return getMapEnMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; mapEn = 5;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getMapEnMap() {
+        return internalGetMapEn().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; mapEn = 5;</code>
+       */
+
+      public java.lang.String getMapEnOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetMapEn().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; mapEn = 5;</code>
+       */
+
+      public java.lang.String getMapEnOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetMapEn().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearMapEn() {
+        internalGetMutableMapEn().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; mapEn = 5;</code>
+       */
+
+      public Builder removeMapEn(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableMapEn().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableMapEn() {
+        return internalGetMutableMapEn().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; mapEn = 5;</code>
+       */
+      public Builder putMapEn(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableMapEn().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; mapEn = 5;</code>
+       */
+
+      public Builder putAllMapEn(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableMapEn().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
       // @@protoc_insertion_point(builder_scope:demo.SunTest)
     }
 
+    // @@protoc_insertion_point(class_scope:demo.SunTest)
+    private static final com.nari.sun.sunTest.SunTest DEFAULT_INSTANCE;
     static {
-      defaultInstance = new SunTest(true);
-      defaultInstance.initFields();
+      DEFAULT_INSTANCE = new com.nari.sun.sunTest.SunTest();
     }
 
-    // @@protoc_insertion_point(class_scope:demo.SunTest)
+    public static com.nari.sun.sunTest.SunTest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<SunTest>
+        PARSER = new com.google.protobuf.AbstractParser<SunTest>() {
+      public SunTest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SunTest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SunTest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SunTest> getParserForType() {
+      return PARSER;
+    }
+
+    public com.nari.sun.sunTest.SunTest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_demo_SunTest_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_demo_SunTest_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_demo_SunTest_MapEnEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_demo_SunTest_MapEnEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_demo_SunTest_PhoneNumber_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_demo_SunTest_PhoneNumber_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
   }
-  private static com.google.protobuf.Descriptors.FileDescriptor
+  private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\ntest.proto\022\004demo\"\221\001\n\007SunTest\022\n\n\002id\030\001 \002" +
-      "(\005\022\014\n\004name\030\002 \002(\t\022\r\n\005email\030\003 \001(\t\032B\n\013Phone" +
-      "Number\022\016\n\006number\030\001 \002(\t\022#\n\003sex\030\002 \001(\0162\021.de" +
-      "mo.SunTest.Sex:\003MAN\"\031\n\003Sex\022\007\n\003MAN\020\000\022\t\n\005W" +
-      "OMAN\020\001B\027\n\014com.nari.sunB\007sunTest"
+      "\n\ntest.proto\022\004demo\"\372\001\n\007SunTest\022\n\n\002id\030\001 \002" +
+      "(\005\022\014\n\004name\030\002 \002(\t\022\r\n\005email\030\003 \001(\t\022\020\n\010nameT" +
+      "est\030\004 \003(\t\022\'\n\005mapEn\030\005 \003(\0132\030.demo.SunTest." +
+      "MapEnEntry\032,\n\nMapEnEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
+      "\005value\030\002 \001(\t:\0028\001\032B\n\013PhoneNumber\022\016\n\006numbe" +
+      "r\030\001 \002(\t\022#\n\003sex\030\002 \001(\0162\021.demo.SunTest.Sex:" +
+      "\003MAN\"\031\n\003Sex\022\007\n\003MAN\020\000\022\t\n\005WOMAN\020\001B\027\n\014com.n" +
+      "ari.sunB\007sunTest"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-      new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-        public com.google.protobuf.ExtensionRegistry assignDescriptors(
-            com.google.protobuf.Descriptors.FileDescriptor root) {
-          descriptor = root;
-          internal_static_demo_SunTest_descriptor =
-            getDescriptor().getMessageTypes().get(0);
-          internal_static_demo_SunTest_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_demo_SunTest_descriptor,
-              new java.lang.String[] { "Id", "Name", "Email", });
-          internal_static_demo_SunTest_PhoneNumber_descriptor =
-            internal_static_demo_SunTest_descriptor.getNestedTypes().get(0);
-          internal_static_demo_SunTest_PhoneNumber_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_demo_SunTest_PhoneNumber_descriptor,
-              new java.lang.String[] { "Number", "Sex", });
-          return null;
-        }
-      };
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
+    internal_static_demo_SunTest_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_demo_SunTest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_demo_SunTest_descriptor,
+        new java.lang.String[] { "Id", "Name", "Email", "NameTest", "MapEn", });
+    internal_static_demo_SunTest_MapEnEntry_descriptor =
+      internal_static_demo_SunTest_descriptor.getNestedTypes().get(0);
+    internal_static_demo_SunTest_MapEnEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_demo_SunTest_MapEnEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_demo_SunTest_PhoneNumber_descriptor =
+      internal_static_demo_SunTest_descriptor.getNestedTypes().get(1);
+    internal_static_demo_SunTest_PhoneNumber_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_demo_SunTest_PhoneNumber_descriptor,
+        new java.lang.String[] { "Number", "Sex", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

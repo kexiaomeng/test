@@ -24,7 +24,7 @@ public class LoginAuthRespHandler extends ChannelHandlerAdapter{
 	private static List<String> whiteList = new ArrayList<String>();
 	//登陆白名单设置
 	static{
-		whiteList.add("111111");
+		whiteList.add("127.0.0.1");
 		
 	}
 	@Override

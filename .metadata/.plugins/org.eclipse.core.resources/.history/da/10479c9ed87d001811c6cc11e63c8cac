@@ -1,0 +1,9 @@
+package com.nari.sun.eventListen.iface;
+
+public interface EventListen {
+	
+	public void start();
+	public void stop();
+	public void registeEvent();
+	
+}

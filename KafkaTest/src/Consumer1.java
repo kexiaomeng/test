@@ -24,35 +24,35 @@ public class Consumer1 {
     }
 
     public void init(){
-        // Ö¸¶¨ zookeeper µÄµØÖ·
+        // Ö¸ï¿½ï¿½ zookeeper ï¿½Äµï¿½Ö·
 //        String zookeeper = "192.168.245.131:2181";
 //        String topic = "DBSERVICE";
 //        String groupId = "test-group";
-    	String zookeeper = "172.16.17.42:2181,172.16.17.41:2181,172.16.17.44:2181";
-    	String topic = "WebDataAsk";
-    	String groupId = "1";
+    	String zookeeper = "127.0.0.1:2181";
+    	String topic = "test";
+    	String groupId = "qzj";
     	
 
 //        Properties props = new Properties();
     	Properties props = new Properties();
         /**
-         * ±ØĞëµÄÅäÖÃ
+         * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
          */
         props.put("zookeeper.connect", zookeeper);
         /**
-         * ±ØĞëµÄÅäÖÃ£¬ ´ú±í¸ÃÏû·ÑÕßËùÊôµÄ consumer group
+         * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ consumer group
          */
         props.put("group.id", groupId);
         /**
-         * ¶à³¤Ê±¼äÃ»ÓĞ·¢ËÍĞÄÌøĞÅÏ¢µ½zookeeper¾Í»áÈÏÎªÆä¹ÒµôÁË£¬Ä¬ÈÏÊÇ6000
+         * ï¿½à³¤Ê±ï¿½ï¿½Ã»ï¿½Ğ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½zookeeperï¿½Í»ï¿½ï¿½ï¿½Îªï¿½ï¿½Òµï¿½ï¿½Ë£ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½6000
          */
         props.put("zookeeper.session.timeout.ms", "6000");
         /**
-         * ¿ÉÒÔÔÊĞízookeeper follower ±È leaderÂıµÄÊ±³¤
+         * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½zookeeper follower ï¿½ï¿½ leaderï¿½ï¿½ï¿½Ê±ï¿½ï¿½
          */
         props.put("zookeeper.sync.time.ms", "200");
         /**
-         * ¿ØÖÆconsumer offsetsÌá½»µ½zookeeperµÄÆµÂÊ£¬ Ä¬ÈÏÊÇ60 * 1000
+         * ï¿½ï¿½ï¿½ï¿½consumer offsetsï¿½á½»ï¿½ï¿½zookeeperï¿½ï¿½Æµï¿½Ê£ï¿½ Ä¬ï¿½ï¿½ï¿½ï¿½60 * 1000
          */
         props.put("auto.commit.interval.ms", "1000");
 
@@ -64,25 +64,25 @@ public class Consumer1 {
         Map<String, Integer> topicCountMap = new HashMap<String, Integer>();
         topicCountMap.put(topic, 1);
         /**
-         * createMessageStreams ÎªÃ¿¸ötopic´´½¨ message stream
+         * createMessageStreams ÎªÃ¿ï¿½ï¿½topicï¿½ï¿½ï¿½ï¿½ message stream
          */
 //        Decoder<String> keyDecoder = new StringDecoder(new VerifiableProperties());
 //        Decoder<String> valueDecoder = new StringDecoder(new VerifiableProperties());
         Decoder<String> keyDecoder = new StringDecoder(new VerifiableProperties());
         Decoder<String> valueDecoder = new StringDecoder(new VerifiableProperties());
-        Map<String, List<KafkaStream<byte[], byte[]>>> messageStreams = consumer.createMessageStreams(topicCountMap);
-      //  Map<String, List<KafkaStream<String String>>> messageStreams2 = consumer.createMessageStreams(topicCountMap,keyDecoder,valueDecoder);
-        KafkaStream<byte[],byte[]> stream = messageStreams.get(topic).get(0);
-        KafkaStream<byte[], byte[]> stream2 = messageStreams.get(topic).get(0);
-        ConsumerIterator<byte[],byte[]> iterator = stream.iterator();
-        ConsumerIterator<byte[], byte[]> iterator2 = stream2.iterator();
+//        Map<String, List<KafkaStream<byte[], byte[]>>> messageStreams = consumer.createMessageStreams(topicCountMap);
+        Map<String, List<KafkaStream<String ,String>>> messageStreams2 = consumer.createMessageStreams(topicCountMap,keyDecoder,valueDecoder);
+        KafkaStream<String,String> stream = messageStreams2.get(topic).get(0);
+//        KafkaStream<byte[], byte[]> stream2 = messageStreams.get(topic).get(0);
+        ConsumerIterator<String,String> iterator = stream.iterator();
+//        ConsumerIterator<byte[], byte[]> iterator2 = stream2.iterator();
         int i = 0;
         while (iterator.hasNext()) {
             try {i++;
-                byte[] message = iterator.next().message();
-                ObjectInputStream input = new ObjectInputStream(new ByteArrayInputStream(message));
-                Student student = (Student)input.readObject();
-                System.out.println("name    "+student.getName());
+                String message = iterator.next().message();
+//                sunTest.SunTest input = sunTest.SunTest.parseFrom(new ByteArrayInputStream(message));
+                
+                System.out.println(message);
             } catch (Throwable e) {
                 System.out.println(e.getCause());
             }
@@ -91,7 +91,7 @@ public class Consumer1 {
     }
 
     public void start() {
-        System.out.println("¿ªÊ¼Ïû·ÑÏûÏ¢...");
+        System.out.println("å¯åŠ¨æ¶ˆè´¹è€…");
         Executors.newSingleThreadExecutor().execute(new Runnable() {
 
             public void run() {

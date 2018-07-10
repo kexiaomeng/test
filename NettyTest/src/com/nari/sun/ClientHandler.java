@@ -93,22 +93,22 @@ public class ClientHandler extends ChannelHandlerAdapter{
 		if(obj instanceof IdleStateEvent){
 			IdleStateEvent tmp = (IdleStateEvent)obj;
 			
-//			if(tmp.state() == IdleState.WRITER_IDLE){
-//				count++;
-//			
-//				if(count < 4){
-//					System.out.println("current write idle: "+count);
-//					System.out.println("heart_beat status ,"+HEAR_BEAT.readerIndex()+","+HEAR_BEAT.writerIndex());
-//
-////					ByteBuf HEAR_BEAT1 = Unpooled.directBuffer().writeBytes("HeartBeat\n".getBytes());
-//					ctx.writeAndFlush(HEAR_BEAT.copy());
-//					System.out.println("heart_beat status ,"+HEAR_BEAT.readerIndex()+","+HEAR_BEAT.writerIndex());
-////					
-//					HEAR_BEAT.readerIndex(0);
-////					ReferenceCountUtil.release(HEAR_BEAT);
-//
-//				}
-//			}
+			if(tmp.state() == IdleState.WRITER_IDLE){
+				count++;
+			
+				if(count < 4){
+					System.out.println("current write idle: "+count);
+					System.out.println("heart_beat status ,"+HEAR_BEAT.readerIndex()+","+HEAR_BEAT.writerIndex());
+ 
+//					ByteBuf HEAR_BEAT1 = Unpooled.directBuffer().writeBytes("HeartBeat\n".getBytes());
+					ctx.writeAndFlush(HEAR_BEAT.copy());
+					System.out.println("heart_beat status ,"+HEAR_BEAT.readerIndex()+","+HEAR_BEAT.writerIndex());
+//					
+					HEAR_BEAT.readerIndex(0);
+//					ReferenceCountUtil.release(HEAR_BEAT);
+
+				}
+			}
 		}
 		
 		

@@ -9,5 +9,7 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="E:/Java资料/netty/Netty权威指南-源代码/NettyBookSource/lib/netty-all-5.0.0.Alpha1.jar"/>
 	<classpathentry kind="lib" path="E:/Java资料/netty/Netty权威指南-源代码/NettyBookSource/lib/netty-all-5.0.0.Alpha1-sources.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/kafka"/>
+	<classpathentry kind="lib" path="E:/library/kafka-wu-library/slf4j-log4j12-1.5.8.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

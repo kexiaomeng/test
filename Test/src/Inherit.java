@@ -186,10 +186,19 @@ public class Inherit {
 		} catch (Exception e) {
 
 		}
-		System.out.println(localName);
+		System.out.println((byte)((byte)0xff+(byte)0x33));
+//		System.out.println(localName);
 
 	System.out.println("hello\n");
 	System.out.println("11111");
+	
+	
+	
+	
+	
+	
+	
+		
 		
 	}
 }

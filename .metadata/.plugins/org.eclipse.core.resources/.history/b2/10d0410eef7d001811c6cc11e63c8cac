@@ -1,0 +1,5 @@
+package com.nari.sun.eventListen;
+
+public class TestEvent {
+
+}

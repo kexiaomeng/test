@@ -10,7 +10,7 @@
 	</section>
 	<section name="WorkbenchPreferenceDialogSettings">
 		<item value="249" key="DIALOG_Y_ORIGIN"/>
-		<item value="1051" key="DIALOG_X_ORIGIN"/>
+		<item value="774" key="DIALOG_X_ORIGIN"/>
 	</section>
 	<section name="ZipFileImportWizard">
 	</section>
@@ -29,6 +29,8 @@
 		</list>
 	</section>
 	<section name="EditorSelectionDialog">
+	</section>
+	<section name="org.eclipse.ui.preferences.keysPreferencePage">
 	</section>
 	<section name="ImportExportAction">
 		<item value="org.eclipse.ui.wizards.import.FileSystem" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
